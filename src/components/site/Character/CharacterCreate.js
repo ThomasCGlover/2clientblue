@@ -58,7 +58,7 @@ const CharacterCreate = (props) =>{
 
     return(
         <>
-            <h3>Create a new Character!</h3>
+            <h3>Create a new Character</h3>
             <form 
             //className={classes.root} 
             autoComplete="off" onSubmit={handleSubmit}>
