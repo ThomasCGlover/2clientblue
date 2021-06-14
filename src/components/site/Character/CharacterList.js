@@ -19,7 +19,7 @@ const CharacterList = (props) => {
     const [campaign, setCampaign] = useState('');
 
     console.log(props);
-    const handleSubmit = (e, CharacterList) => {
+    const characterList = (e, CharacterList) => {
         e.preventDefault();
         fetch(`http://localhost:3000/character/${props.characterList.owner_id}`,{
             method: 'GET',
