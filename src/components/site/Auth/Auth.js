@@ -5,7 +5,6 @@ import Register from './Register';
 
 const Auth = (props) => {
 
-
     return(
         <div>
         <h1>Dungeons & Dragons Character Creator</h1>
