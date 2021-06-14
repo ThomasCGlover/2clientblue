@@ -103,5 +103,5 @@ const CharacterEdit = (props) =>{
         </Modal>
     )
 }
-
 export default withStyles() (CharacterEdit);
+
