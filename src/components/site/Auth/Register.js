@@ -18,6 +18,9 @@ const Register = (props) => {
         ).then((data) => {
             props.updateToken(data.sessionToken)
         })
+        // .catch(
+        //     alert('Email already in use!')
+        // )
     }
 
     return(
@@ -27,14 +30,14 @@ const Register = (props) => {
             <label htmlFor="email">Email:</label>
             <br/>
             <input type="text" 
-            id='loginemail' 
+            id='registeremail' 
             value={email} 
             onChange={(e) => setEmail(e.target.value)} />
             <br/>
             <label htmlFor="password">Password:</label>
             <br/>
             <input type="password" 
-            id='loginpassword' 
+            id='registerpassword' 
             value={password} 
             onChange={(e) => setPassword(e.target.value)} />
             <br/>
