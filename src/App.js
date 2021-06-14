@@ -47,6 +47,6 @@ function App() {
   );
 }
 
-ReactDOM.render(<Logout />, document.querySelector('#root'));
+// ReactDOM.render(<Logout />, document.querySelector('#root'));
 
 export default App;
