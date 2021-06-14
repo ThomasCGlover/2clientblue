@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {withStyles} from '@material-ui/core/styles'
 import { Button, TextField, Select, FormControl, InputLabel, MenuItem } from '@material-ui/core';
+import { Form } from 'reactstrap';
 
 
 const CharacterCreate = (props) =>{
@@ -22,6 +23,7 @@ const CharacterCreate = (props) =>{
         fetch('http://localhost:3003/character/create', {
             method: 'POST',
             body: JSON.stringify({
+                character: {
                 charName: charName,
                 charClass: charClass,
                 race: race,
@@ -33,6 +35,7 @@ const CharacterCreate = (props) =>{
                 CHA: cha,
                 description: description,
                 campaign: campaign
+            }
             }),
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -59,9 +62,10 @@ const CharacterCreate = (props) =>{
     return(
         <>
             <h3>Create a new Character</h3>
-            <form 
+            <Form 
             //className={classes.root} 
-            autoComplete="off" onSubmit={handleSubmit}>
+            // autoComplete="off"
+            onSubmit={handleSubmit}>
                 <div>
                     <TextField id='outlined-basic' label='Name' variant='outlined' value={charName} onChange={(e) => setCharName(e.target.value)} />
                 </div>
@@ -121,8 +125,8 @@ const CharacterCreate = (props) =>{
                 <div>
                     <TextField label='Campaign' id='outlined-size-small' defaultValue='' variant='outlined' value={campaign} onChange={(e) => setCampaign(e.target.value)} />
                 </div>
-            </form>
-            <Button type='submit' onClick={console.log("character")}>Click to create character</Button>
+            </Form>
+            <Button onClick={handleSubmit }>Click to create character</Button>
         </>
     )
 }
