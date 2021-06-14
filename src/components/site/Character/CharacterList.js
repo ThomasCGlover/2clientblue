@@ -18,10 +18,7 @@ const CharacterList = (props) => {
     const [description,setDescription] = useState('');
     const [campaign, setCampaign] = useState('');
 
-    console.log(props);
-    const characterList = (e, CharacterList) => {
-        e.preventDefault();
-        fetch(`http://localhost:3000/character/${props.characterList.owner_id}`,{
+        fetch(`http://localhost:3000/me/:id`,{
             method: 'GET',
             body: JSON.stringify({
                 charName,
@@ -36,15 +33,16 @@ const CharacterList = (props) => {
                 description,
                 campaign
             })
-        }).then ((res) =>{
-            props.fetchCharacters();
+        }).then ((res) => res.json())
+        .then((CharacterList) => {
+            console.log(CharacterList);
         })
     }
     
     return(
         <>
             {
-                props.character.map((res,key) => {
+                CharacterData.map((res,key) => {
                     return(
                         <tr key={key}>
                             <td>{CharacterData.charName}</td>
@@ -64,6 +62,5 @@ const CharacterList = (props) => {
             }
         </>
     )
-}
-
+    
 export default CharacterList;
