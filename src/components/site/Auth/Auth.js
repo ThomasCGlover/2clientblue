@@ -4,7 +4,6 @@ import Login from './Login';
 import Register from './Register';
 
 const Auth = (props) => {
-    
 
     return(
         <div>
@@ -12,7 +11,6 @@ const Auth = (props) => {
         <Login updateToken={props.updateToken}/>
         <Register updateToken={props.updateToken}/>
         </div>
-
     )
     }
 
