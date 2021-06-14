@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {withStyles} from '@material-ui/core/styles'
 import { Button, TextField, Select, FormControl, InputLabel, Modal } from '@material-ui/core';
 
 
@@ -102,3 +103,5 @@ const CharacterEdit = (props) =>{
         </Modal>
     )
 }
+
+export default withStyles() (CharacterEdit);
