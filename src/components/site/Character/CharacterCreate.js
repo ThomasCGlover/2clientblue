@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {withStyles} from '@material-ui/core/styles'
 import { Button, TextField, Select, FormControl, InputLabel, MenuItem } from '@material-ui/core';
-import { Form, } from 'reactstrap';
+import { Form } from 'reactstrap';
 
 
 const CharacterCreate = (props) =>{
