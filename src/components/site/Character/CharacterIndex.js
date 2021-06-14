@@ -7,7 +7,7 @@ const CharacterIndex = (props) =>{
     return(
         <>
             {
-                props.character.map((character,key) => {
+                props.CharacterCreate.map((character,key) => {
                     return(
                         <tr key={key}>
                             <td>{character.charName}</td>
