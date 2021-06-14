@@ -5,7 +5,7 @@ import { Button,
     FormControl, 
     InputLabel } from '@material-ui/core';
 
-const CharacterList = (props) => {
+const DisplayCharacter = (props) => {
     const [charName, setCharName] = useState(''); 
     const [charClass, setCharClass] = useState('');
     const [race, setEditRace] = useState('');
@@ -32,35 +32,36 @@ const CharacterList = (props) => {
                 CHA,
                 description,
                 campaign
+            }),
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': props.sessionToken
             })
         }).then ((res) => res.json())
-        .then((CharacterList) => {
-            console.log(CharacterList);
+        .then((characterData) => {
+            console.log(characterData);
         })
-    }
-    
-    return(
-        <>
-            {
-                CharacterData.map((res,key) => {
-                    return(
-                        <tr key={key}>
-                            <td>{CharacterData.charName}</td>
-                            <td>{CharacterData.charClass}</td>
-                            <td>{CharacterData.race}</td>
-                            <td>{CharacterData.STR}</td>
-                            <td>{CharacterData.DEX}</td>
-                            <td>{CharacterData.CON}</td>
-                            <td>{CharacterData.INT}</td>
-                            <td>{CharacterData.WIS}</td>
-                            <td>{CharacterData.CHA}</td>
-                            <td>{CharacterData.description}</td>
-                            <td>{CharacterData.campaign}</td>
-                        </tr>
-                    )
-                })
-            }
-        </>
+        
+        return(
+            <>
+            <div className='mainDiv'>
+                <h3>Character List</h3>
+                <ul>
+                    <li><TextField label='Name' value={charName}></TextField></li>
+                    <li><TextField label='Class' value={charClass}></TextField></li>
+                    <li><TextField label='Race' value={race}></TextField></li>
+                    <li><TextField label='STR' value={STR}></TextField></li>
+                    <li><TextField label='DEX' value={DEX}></TextField></li>
+                    <li><TextField label='CON' value={CON}></TextField></li>
+                    <li><TextField label='INT' value={INT}></TextField></li>
+                    <li><TextField label='WIS' value={WIS}></TextField></li>
+                    <li><TextField label='CHA' value={CHA}></TextField></li>
+                    <li><TextField label='Description' value={description}></TextField></li>
+                    <li><TextField label='Campaign' value={campaign}></TextField></li>
+                </ul>
+            </div>
+            </>
     )
+}
     
-export default CharacterList;
+export default DisplayCharacter;
