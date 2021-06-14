@@ -47,22 +47,21 @@ const CharacterIndex = (props) => {
     },
   });
 
-  export default function SimpleCard() {
-    const classes = useStyles();
-    const bull = <span className={classes.bullet}>•</span>;
+
   
   return(
       <Card className>
         <CardContent>
             <Typography className variant='h5'>
-                {<CharacterTable character={character} fetchCharacters={fetchCharacters} />}
+                {<CharacterTable  character={character} fetchCharacters={fetchCharacters} />}
             </Typography> 
         </CardContent>
         <CardActions>
-            <Button size='small'>Edit</Button>
+        <Button size='small'>Edit</Button>
         </CardActions>
     </Card>
   )
+  
 //   const characterMap = () => {
 //     return props.character.map((character, index) => {
 //   return (
