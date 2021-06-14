@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {withStyles} from '@material-ui/core/styles'
 import { Button, TextField, Select, FormControl, InputLabel, Modal } from '@material-ui/core';
 
 
@@ -17,7 +18,7 @@ const CharacterEdit = (props) =>{
 
     const characterEdit = (event, character) =>{
         event.preventDefault();
-        fetch(`http://localhost:3000/character/${props.characterToUpdate.id}`,{
+        fetch(`http://localhost:3003/character/${props.characterToUpdate.id}`,{
             method: 'PUT',
             body: JSON.stringify({
                 charName: editCharName,
@@ -102,5 +103,5 @@ const CharacterEdit = (props) =>{
         </Modal>
     )
 }
+export default withStyles() (CharacterEdit);
 
-export default CharacterEdit;
