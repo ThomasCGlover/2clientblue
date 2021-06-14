@@ -12,6 +12,7 @@ const Auth = (props) => {
         <Login updateToken={props.updateToken}/>
         <Register updateToken={props.updateToken}/>
         </div>
+
     )
     }
 
