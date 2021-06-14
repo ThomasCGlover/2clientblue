@@ -18,6 +18,9 @@ const Login = (props) => {
         ).then((data) => {
             props.updateToken(data.sessionToken)
         })
+        // .catch(
+        //     alert('Username or Password is incorrect')
+        // )
     }
 
     return(
