@@ -5,6 +5,7 @@ import Auth from './components/site/Auth/Auth.js';
 import CharacterIndex from '../src/components/site/Character/CharacterIndex';
 
 import CharacterCreate from '../src/components/site/Character/CharacterCreate';
+
 //import ReactDOM from 'react-dom';
 import Logout from './components/site/Logout/Logout.js';
 import NavBar from './components/site/Navigation/NavBar';
@@ -57,7 +58,5 @@ function App() {
   
 
 }
-
-
 
 export default App;
