@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import Auth from './components/site/Auth/Auth.js';
 import CharacterCreate from '../src/components/site/Character/CharacterCreate';
+import ReactDOM from 'react-dom';
+import Logout from './components/site/Logout/Logout';
 // import CharacterIndex from '../src/components/site/Character/CharacterIndex';
 
 function App() {
@@ -18,8 +20,8 @@ function App() {
 
   //   }
   // }, [])
+  
 
- 
   const updateToken = (newToken) => {
     localStorage.setItem('token', newToken);
     setSessionToken(newToken);
@@ -42,5 +44,7 @@ function App() {
     </div>
   );
 }
+
+ReactDOM.render(<Logout />, document.querySelector('#root'));
 
 export default App;
