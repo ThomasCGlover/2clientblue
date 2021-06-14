@@ -2,15 +2,17 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 //import { makeStyles } from '@material-ui/core/styles';
 //import DeleteIcon from '@material-ui/icons/Delete';
+import { withStyles } from '@material-ui/styles';
 import './Logout.css';
-import logoutWoodenX from '../../assets/logoutWoodenX.png';
+import logoutWoodenX from '../../../assets/logoutWoodenX.png';
+
 
 const Logout = (props) => {
-    return(
-        <div>
-           
-        </div>
-    )
+    // return(
+    //     <div>
+          
+    //     </div>
+    // )
 
 
 //const useStyles = makeStyles((theme) => ({
@@ -20,23 +22,23 @@ const Logout = (props) => {
 //export default function IconLabelButtons() {
   //const classes = useStyles();
 
-  return (
-   <div>
-      <Button
-        variant="contained"
-        color="secondary"
-        className={classes.button}
-        //startIcon={<DeleteIcon />}
-        img id="logoutWoodenX" src={logoutWoodenX} alt="Power Button" 
-        onClick={props.clearSession}
-      >
-        Log Out
-      </Button>
-    </div>
-);
+  // return (
+  // <div>
+  //     <Button
+  //       variant="contained"
+  //       color="secondary"
+  //       // className={classes.button}
+  //       //startIcon={<DeleteIcon />}
+  //       img id="logoutWoodenX" src={logoutWoodenX} alt="Power Button" 
+  //       onClick={props.clearSession}
+  //     >
+  //       Log Out
+  //     </Button>
+    // </div>
+// );
 };
 
 
 
 
-export default Logout;
+export default  withStyles(Logout);

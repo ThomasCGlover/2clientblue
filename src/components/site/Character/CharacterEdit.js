@@ -1,20 +1,21 @@
 import React, {useState} from 'react';
 import {withStyles} from '@material-ui/core/styles'
 import { Button, TextField, Select, FormControl, InputLabel, Modal } from '@material-ui/core';
+import {Form} from 'reactstrap';
 
 
 const CharacterEdit = (props) =>{
-    const [editCharName, setEditCharName] = useState(''); 
-    const [editCharClass, setEditCharClass] = useState('');
-    const [editRace, setEditRace] = useState('');
-    const [editStr, setEditStr] = useState('');
-    const [editDex, setEditDex] = useState('');
-    const [editCon, setEditCon] = useState('');
-    const [editInt, setEditInt] = useState('');
-    const [editWis, setEditWis] = useState('');
-    const [editCha, setEditCha] = useState('');
-    const [editDescription,setEditDescription] = useState('');
-    const [editCampaign, setEditCampaign] = useState('');
+    const [editCharName, setEditCharName] = useState(props.characterToUpdate.charName); 
+    const [editCharClass, setEditCharClass] = useState(props.characterToUpdate.charClass);
+    const [editRace, setEditRace] = useState(props.characterToUpdate.race);
+    const [editStr, setEditStr] = useState(props.characterToUpdate.STR);
+    const [editDex, setEditDex] = useState(props.characterToUpdate.DEX);
+    const [editCon, setEditCon] = useState(props.characterToUpdate.CON);
+    const [editInt, setEditInt] = useState(props.characterToUpdate.INT);
+    const [editWis, setEditWis] = useState(props.characterToUpdate.WIS);
+    const [editCha, setEditCha] = useState(props.characterToUpdate.CHA)
+    const [editDescription,setEditDescription] = useState(props.characterToUpdate.description);
+    const [editCampaign, setEditCampaign] = useState(props.characterToUpdate.campaign);
 
     const characterEdit = (event, character) =>{
         event.preventDefault();
@@ -32,6 +33,10 @@ const CharacterEdit = (props) =>{
                 CHA: editCha,
                 description: editDescription,
                 campaign: editCampaign
+            }),
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': props.token
             })
         }).then ((res) =>{
             props.fetchCharacters();
@@ -39,10 +44,11 @@ const CharacterEdit = (props) =>{
         })
     }
     return(
-        <Modal
-        open={open}>
-            <h3>Edit your character</h3>
-            <form className={classes.root} autoComplete="off" onSubmit={handleSubmit}>
+        <>
+        <h3>Edit your character</h3>
+            <Form 
+            //className={classes.root} autoComplete="off" 
+            onSubmit={characterEdit}>
                 <div>
                     <TextField id='outlined-basic' label='Name' variant='outlined' value={editCharName} onChange={(e) => setEditCharName(e.target.value)} />
                 </div>
@@ -98,9 +104,10 @@ const CharacterEdit = (props) =>{
                 <div>
                     <TextField label='Campaign' id='outlined-size-small' defaultValue='' variant='outlined' value={editCampaign} onChange={(e) => setEditCampaign(e.target.value)} />
                 </div>
-            </form>
+            </Form>
             <Button type='submit'>Update Character</Button>
-        </Modal>
+        
+        </>
     )
 }
 export default withStyles() (CharacterEdit);
