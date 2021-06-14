@@ -1,9 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import Auth from './components/site/Auth/Auth.js';
+
+// import CharacterCreate from '../src/components/site/Character/CharacterCreate';
+import CharacterIndex from '../src/components/site/Character/CharacterIndex';
+
 import CharacterCreate from '../src/components/site/Character/CharacterCreate';
-// import ReactDOM from 'react-dom';
-// import Logout from './components/site/Logout/Logout';
+
+//import ReactDOM from 'react-dom';
+import Logout from './components/site/Logout/Logout.js';
+import NavBar from './components/site/Navigation/NavBar';
 // import CharacterIndex from '../src/components/site/Character/CharacterIndex';
+
 
 function App() {
 
@@ -22,8 +29,6 @@ function App() {
   //   }
   // }, [])
   
-
-
   const updateToken = (newToken) => {
     localStorage.setItem('token', newToken);
     setSessionToken(newToken);
@@ -37,16 +42,21 @@ function App() {
 
   const viewConductor = () => {
     return sessionToken === localStorage.getItem('token') ?
-    <CharacterCreate sessionToken={sessionToken} /> : <Auth updateToken={updateToken}/>  //import character index file, change if needed
+    <CharacterIndex sessionToken={sessionToken} /> : <Auth updateToken={updateToken}/>  //import character index file, change if needed
   }
   
+
+
   return (
     <div className="App">
+      <NavBar />
       {viewConductor()}
     </div>
+    
   );
-}
 
-// ReactDOM.render(<Logout />, document.querySelector('#root'));
+  
+
+}
 
 export default App;

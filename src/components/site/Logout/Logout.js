@@ -1,44 +1,41 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-//import { makeStyles } from '@material-ui/core/styles';
-//import DeleteIcon from '@material-ui/icons/Delete';
-import { withStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/core/styles';
+import DeleteIcon from '@material-ui/icons/Delete';
 import './Logout.css';
 import logoutWoodenX from '../../../assets/logoutWoodenX.png';
 
 
-const Logout = (props) => {
-    // return(
-    //     <div>
-          
-    //     </div>
-    // )
+const useStyles = makeStyles((theme) => ({
+    button: {
+      margin: theme.spacing(1),
+    },
+  }));
+  
+  export default
+   function Logout(props) {
+    //const logoutWoodenX = 
+    const classes = useStyles();
+  
+    return (
+      <div>
+        <Button onClick={props.onClick}
+          variant="contained"
+          color="secondary"
+          //clearSession={props.onClick}
+          //className={classes.button}
+          startIcon={<DeleteIcon />}
+          //startIcon={logoutWoodenX}
+        >
+          Log Out
+        </Button>
+        
+        
+      </div>
+    );
+  }
+  
 
 
-//const useStyles = makeStyles((theme) => ({
-  //button: {
-    //margin: theme.spacing(1),
-  //},
-//export default function IconLabelButtons() {
-  //const classes = useStyles();
+//export default Logout;
 
-  // return (
-  // <div>
-  //     <Button
-  //       variant="contained"
-  //       color="secondary"
-  //       // className={classes.button}
-  //       //startIcon={<DeleteIcon />}
-  //       img id="logoutWoodenX" src={logoutWoodenX} alt="Power Button" 
-  //       onClick={props.clearSession}
-  //     >
-  //       Log Out
-  //     </Button>
-    // </div>
-// );
-};
-
-
-
-
-export default  withStyles(Logout);
