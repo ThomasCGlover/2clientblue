@@ -10,8 +10,8 @@ import { Table, Button} from 'reactstrap';
 
 const CharacterTable = (props) => { 
     console.log(props.character);
-    if(props.character){
-        const list = props.character.map(characters => { 
+    if(this.props.character.character){
+        const list = this.props.character.character.map(characters => { 
             return(
                 <div className="card" style={{width: 30 + 'rem' }}>
                 <div className="card-body">
