@@ -6,6 +6,7 @@ import CharacterCreate from '../src/components/site/Character/CharacterCreate';
 import Logout from './components/site/Logout/Logout.js';
 import NavBar from './components/site/Navigation/NavBar';
 // import CharacterIndex from '../src/components/site/Character/CharacterIndex';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
 
