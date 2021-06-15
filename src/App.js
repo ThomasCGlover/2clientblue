@@ -17,7 +17,7 @@ import Logout from './components/site/Logout/Logout.js';
 
 function App() {
 
-  const [sessionToken, setSessionToken] = useState('')
+  const [sessionToken, setSessionToken] = useState(undefined)
 
   useEffect(() => {
     if(localStorage.getItem(!undefined)) {
@@ -66,4 +66,7 @@ function App() {
 
 
 
+
+
 export default App;
+
