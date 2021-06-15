@@ -12,6 +12,7 @@ import CharacterEdit from "./CharacterEdit";
 import { Link, Route, Switch } from 'react-router-dom';
 // import { BrowserRouter as Router } from 'react-router-dom';
 import { Form, Container, Row, Col } from 'reactstrap';
+import NavBar from "../Navigation/NavBar";
 
 const CharacterIndex = (props) => {
 
@@ -38,6 +39,10 @@ const CharacterIndex = (props) => {
             }
             )
     };
+    const editCharacterInfo = (character) =>{
+        setCharacterToUpdate(character);
+        console.log(character);
+    }
 
     
     const displayCreate = () => {
@@ -87,11 +92,16 @@ const CharacterIndex = (props) => {
             <Card className>
                 <CardContent>
                     <Typography className variant='h5'>
-                        {<CharacterTable character={character} fetchCharacters={fetchCharacters} />}
+                        {<CharacterTable character={character} fetchCharacters={fetchCharacters} editCharacterInfo={editCharacterInfo} sessionToken={props.sessionToken}/>}
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size='small' onClick={updateActive ? <CharacterEdit characterToUpdate={characterToUpdate} updateOn={updateOn} fetchCharacters={fetchCharacters} token={props.token} /> :<></>} >Edit</Button>
+                    <Router>
+                        <Route to='/character/CharacterEdit'><CharacterEdit characterToUpdate={characterToUpdate} fetchCharacters={fetchCharacters} sessionToken={props.sessionToken}/></Route>
+                    <Link to='/character/CharacterEdit'>
+                    <Button size='small'>Edit</Button>
+                    </Link>
+                    </Router>
                 </CardActions>
             </Card>
             <CharacterCreate sessionToken={props.sessionToken} fetchCharacters={fetchCharacters}/>

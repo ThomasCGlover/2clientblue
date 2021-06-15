@@ -16,9 +16,10 @@ import NavBar from './components/site/Navigation/NavBar';
 
 
 function App() {
-
+  
   const [sessionToken, setSessionToken] = useState(undefined)
-
+  const [characterToUpdate, setCharacterToUpdate] = useState({}) 
+  
   useEffect(() => {
     if(localStorage.getItem(!undefined)) {
       setSessionToken(localStorage.getItem('token'))
@@ -48,12 +49,19 @@ function App() {
     <CharacterIndex sessionToken={sessionToken} /> : <Auth updateToken={updateToken}/>  //import character index file, change if needed
   }
   
-
+  
+    const updateCharacter = (character) =>{
+      setCharacterToUpdate(character)
+    }
+  
 
   return (
     <div className="App">
 
-      <NavBar clearSession = {clearToken} />
+      <NavBar 
+      clearSession = {clearToken}
+      characterToUpdate={characterToUpdate}
+      />
 
       {viewConductor()}
     </div>

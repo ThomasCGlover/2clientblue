@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 
 const CharacterTable = (props) => {
     console.log(props.character);
+
     if(props.character){
        return props.character.map((characters => { 
             return(
@@ -40,37 +41,40 @@ const CharacterTable = (props) => {
           </div>
             )
         }))
+
     }
-// const characterMapper = () => { 
-// return props.character.map((characters, index) => {
-//     return (
+    // const characterMapper = () => { 
+    // return props.character.map((characters, index) => {
+    //     return (
 
-  
-//           <tr key={index}>
-//             <td>{characters.charName}</td>
-//             <td>{characters.charClass}</td>
-//             <td>{characters.race}</td>
-//             <td>{characters.STR}</td>
-//             <td>{characters.DEX}</td>
-//             <td>{characters.CON}</td>
-//             <td>{characters.INT}</td>
-//             <td>{characters.WIS}</td>
-//             <td>{characters.CHA}</td>
-//             <td>{characters.description}</td>
-//             <td>{characters.background}</td>
-//             <td>{characters.campaign}</td>
-//             <td>{characters.id}</td>
-//           </tr>
 
-//           )},
-//     )
-// } 
-    return(
+    //           <tr key={index}>
+    //             <td>{characters.charName}</td>
+    //             <td>{characters.charClass}</td>
+    //             <td>{characters.race}</td>
+    //             <td>{characters.STR}</td>
+    //             <td>{characters.DEX}</td>
+    //             <td>{characters.CON}</td>
+    //             <td>{characters.INT}</td>
+    //             <td>{characters.WIS}</td>
+    //             <td>{characters.CHA}</td>
+    //             <td>{characters.description}</td>
+    //             <td>{characters.background}</td>
+    //             <td>{characters.campaign}</td>
+    //             <td>{characters.id}</td>
+    //           </tr>
+
+    //           )},
+    //     )
+    // } 
+    return (
         <>
+
         <h3>Character Information</h3>
         <div className='row'>
             {CharacterTable()}
         </div>
+
         </>
     )
 }
