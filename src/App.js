@@ -4,12 +4,11 @@ import Auth from './components/site/Auth/Auth.js';
 // import CharacterCreate from '../src/components/site/Character/CharacterCreate';
 import CharacterIndex from '../src/components/site/Character/CharacterIndex';
 
-import CharacterCreate from '../src/components/site/Character/CharacterCreate';
 
 //import ReactDOM from 'react-dom';
 import Logout from './components/site/Logout/Logout.js';
-import NavBar from './components/site/Navigation/NavBar';
-// import CharacterIndex from '../src/components/site/Character/CharacterIndex';
+// import NavBar from './components/site/Navigation/NavBar';
+
 
 
 function App() {
@@ -49,7 +48,7 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
+      {/* <NavBar /> */}
       {viewConductor()}
     </div>
     

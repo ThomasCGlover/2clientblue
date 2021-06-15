@@ -112,5 +112,3 @@ const CharacterEdit = (props) =>{
     )
 }
 export default withStyles() (CharacterEdit);
-
-
