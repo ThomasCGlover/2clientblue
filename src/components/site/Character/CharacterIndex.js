@@ -21,6 +21,16 @@ const CharacterIndex = ({sessionToken}) => {
     const[createActive, setCreateActive] = useState(false);
     const[updateActive, setUpdateActive] = useState(false);
     const [characterToUpdate, setCharacterToUpdate] = useState({})
+    const [emailToUpdate, setEmailToUpdate] =useState({})
+
+    const fetchEmail = async () =>{
+        await fetch(`${APIURL}/user/`, {
+            method:"GET",
+            body: JSON.stringify({
+                email: emailToUpdate
+            })
+        })
+    }
 
     const fetchCharacters = async () => {
         await fetch(`${APIURL}/character`, {
@@ -91,6 +101,7 @@ const CharacterIndex = ({sessionToken}) => {
     return (
         <>
             <Card className>
+                
                 <CardContent>
                     <Typography className variant='h5'>
                         {<CharacterTable character={character} fetchCharacters={fetchCharacters} editCharacterInfo={editCharacterInfo} updateOn={updateOn} sessionToken={sessionToken}/>}
