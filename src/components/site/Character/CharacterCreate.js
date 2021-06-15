@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles'
 import { Button, TextField, Select, FormControl, InputLabel, MenuItem } from '@material-ui/core';
 import { Form } from 'reactstrap';
+import APIURL from '../../../helpers/environment'
 
 
 const CharacterCreate = (props) => {
@@ -20,7 +21,7 @@ const CharacterCreate = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch('http://localhost:3003/character/create', {
+        fetch(`${APIURL}/character/create`, {
             method: 'POST',
             body: JSON.stringify({
                 character: {

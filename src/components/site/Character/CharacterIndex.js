@@ -13,6 +13,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Form, Container, Row, Col } from 'reactstrap';
 import NavBar from "../Navigation/NavBar";
+import APIURL from '../../../helpers/environment'
 
 const CharacterIndex = ({sessionToken}) => {
 
@@ -22,7 +23,7 @@ const CharacterIndex = ({sessionToken}) => {
     const [characterToUpdate, setCharacterToUpdate] = useState({})
 
     const fetchCharacters = async () => {
-        await fetch("http://localhost:3003/character", {
+        await fetch(`${APIURL}/character`, {
             method: "GET",
             //   body: JSON.stringify({
             //       character: character

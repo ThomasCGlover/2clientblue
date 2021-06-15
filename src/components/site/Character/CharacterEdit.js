@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles'
 import { Button, TextField, Select, FormControl, InputLabel, MenuItem } from '@material-ui/core';
 import { Form, Modal, ModalHeader, ModalBody } from 'reactstrap';
+import APIURL from '../../../helpers/environment'
 
 
 const CharacterEdit = (props) => {
@@ -20,7 +21,7 @@ const CharacterEdit = (props) => {
 
     const characterEdit = (event, characters) => {
         event.preventDefault();
-        fetch(`http://localhost:3003/character/${props.characterToUpdate.id}`, {
+        fetch(`${APIURL}/character/${props.characterToUpdate.id}`, {
             method: 'PUT',
             body: JSON.stringify({
                 character: {

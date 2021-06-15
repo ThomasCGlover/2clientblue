@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
 // import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import APIURL from '../../../helpers/environment'
 
 const Register = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [email, updateEmail] = useState('');
+    const [newEmail, updateNewEmail] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch("http://localhost:3003/user/register", {
+        fetch(`${APIURL}/user/register`, {
             method: 'POST',
             body: JSON.stringify({user: {email: email, password: password}}),
             headers: new Headers({
@@ -48,8 +49,8 @@ const Register = (props) => {
             <br />
             <input type="text"
             id='registeremail'
-            value={email}
-            onChange={(e) => updateEmail(e.target.value)} />
+            value={newEmail}
+            onChange={(e) => updateNewEmail(e.target.value)} />
         </form>
     </div>
     )

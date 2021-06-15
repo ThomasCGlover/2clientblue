@@ -9,12 +9,13 @@ import CharacterEdit from './CharacterEdit';
 import { Table, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import CharacterIndex from './CharacterIndex';
+import APIURL from '../../../helpers/environment'
 
 
 
 const CharacterTable = (props) => {
     const deleteCharacters = (character) =>{
-        fetch(`http://localhost:3003/character/delete/${character.id}`,{
+        fetch(`${APIURL}/character/delete/${character.id}`,{
             method: 'DELETE',
             headers: new Headers ({
                 'Content-Type': 'application/json',
