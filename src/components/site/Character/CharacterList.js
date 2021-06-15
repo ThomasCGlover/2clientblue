@@ -7,12 +7,12 @@ import CharacterEdit from './CharacterEdit';
 //     FormControl, 
 //     InputLabel } from '@material-ui/core';
 import { Table, Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 const CharacterTable = (props) => {
     console.log(props.character);
-
     if(props.character){
-        const list = props.character.map(characters => { 
+       return props.character.map((characters => { 
             return(
                 <div className="card" style={{width: 30 + 'rem' }}>
                 <div className="card-body">
@@ -39,7 +39,7 @@ const CharacterTable = (props) => {
               </div>
           </div>
             )
-         })
+        }))
     }
 // const characterMapper = () => { 
 // return props.character.map((characters, index) => {
@@ -69,7 +69,7 @@ const CharacterTable = (props) => {
         <>
         <h3>Character Information</h3>
         <div className='row'>
-            {list}
+            {CharacterTable()}
         </div>
         </>
     )

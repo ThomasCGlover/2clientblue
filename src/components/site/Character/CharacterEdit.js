@@ -93,7 +93,7 @@ const CharacterEdit = (props) =>{
 
                         </Select>
                     </FormControl>
-                </div> */}
+                </div> 
                 <div>
                     <TextField label='Strength' id='outlined-size-small' defaultValue='' variant='outlined' size='small' value={editStr} onChange={(e) => setEditStr(e.target.value)} />
                     <TextField label='Dexterity' id='outlined-size-small' defaultValue='' variant='outlined' size='small' value={editDex} onChange={(e) => setEditDex(e.target.value)} />
@@ -116,4 +116,5 @@ const CharacterEdit = (props) =>{
         </>
     )
 }
+
 export default withStyles() (CharacterEdit);

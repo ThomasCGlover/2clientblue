@@ -125,4 +125,4 @@ const SiteBar = (props) => {
   );
 }
 
-// export default withStyles()(SiteBar);
+export default withStyles()(SiteBar);

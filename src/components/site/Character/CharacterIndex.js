@@ -10,7 +10,7 @@ import CharacterTable from "./CharacterList";
 import { withStyles } from "@material-ui/styles";
 import CharacterEdit from "./CharacterEdit";
 import { Link, Route, Switch } from 'react-router-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+// import { BrowserRouter as Router } from 'react-router-dom';
 import { Form, Container, Row, Col } from 'reactstrap';
 
 const CharacterIndex = (props) => {
