@@ -90,7 +90,7 @@ const CharacterIndex = (props) => {
                     <Button size='small' onClick={updateActive ? <CharacterEdit characterToUpdate={characterToUpdate} updateOn={updateOn} fetchCharacters={fetchCharacters} token={props.token} /> :<></>} >Edit</Button>
                 </CardActions>
             </Card>
-            <CharacterCreate sessionToken={props.sessionToken}/>
+            <CharacterCreate sessionToken={props.sessionToken} fetchCharacters={fetchCharacters}/>
             {/* <Button onClick={displayCreate()}>Create New Character</Button> */}
             {/* <Container>
                 <Row>
