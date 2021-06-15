@@ -58,10 +58,17 @@ const CharacterTable = (props) => {
         <Table striped>
             <thead>
                 <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
+                    <th>Name:</th>
+                    <th>Class:</th>
+                    <th>Race</th>
+                    <th>STR</th>
+                    <th>DEX</th>
+                    <th>CON</th>
+                    <th>INT</th>
+                    <th>WIS</th>
+                    <th>CHA</th>
+                    <th>Description</th>
+                    <th>Campaign</th>
                 </tr>
             </thead>
             <tbody>

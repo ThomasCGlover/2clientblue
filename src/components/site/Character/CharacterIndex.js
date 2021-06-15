@@ -14,7 +14,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Form, Container, Row, Col } from 'reactstrap';
 import NavBar from "../Navigation/NavBar";
 
-const CharacterIndex = (props) => {
+const CharacterIndex = ({sessionToken}) => {
 
     const [character, setCharacters] = useState([]);
     const[createActive, setCreateActive] = useState(false);
@@ -29,7 +29,7 @@ const CharacterIndex = (props) => {
             //   }),
             headers: new Headers({
                 "Content-Type": "application/json",
-                'Authorization': props.sessionToken,
+                'Authorization': sessionToken,
             }),
         })
             .then((res) => res.json())
@@ -47,7 +47,7 @@ const CharacterIndex = (props) => {
     
     const displayCreate = () => {
         return(
-        <CharacterCreate token={props.token} />)
+        <CharacterCreate  />)
     }
     // const createOn = () =>{
     //     setCreateActive(true);
@@ -92,24 +92,19 @@ const CharacterIndex = (props) => {
             <Card className>
                 <CardContent>
                     <Typography className variant='h5'>
-                        {<CharacterTable character={character} fetchCharacters={fetchCharacters} editCharacterInfo={editCharacterInfo} sessionToken={props.sessionToken}/>}
+                        {<CharacterTable character={character} fetchCharacters={fetchCharacters} editCharacterInfo={editCharacterInfo} updateOn={updateOn} sessionToken={sessionToken}/>}
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Router>
-                        <Route to='/character/CharacterEdit'><CharacterEdit characterToUpdate={characterToUpdate} fetchCharacters={fetchCharacters} sessionToken={props.sessionToken}/></Route>
-                    <Link to='/character/CharacterEdit'>
-                    <Button size='small'>Edit</Button>
-                    </Link>
-                    </Router>
+                    {updateActive ? <CharacterEdit characterToUpdate={characterToUpdate} updateOff={updateOff} sessionToken={sessionToken} fetchCharacters={fetchCharacters}/> : <></>}
                 </CardActions>
             </Card>
-            <CharacterCreate sessionToken={props.sessionToken} fetchCharacters={fetchCharacters}/>
+            <CharacterCreate sessionToken={sessionToken} fetchCharacters={fetchCharacters}/>
             {/* <Button onClick={displayCreate()}>Create New Character</Button> */}
             {/* <Container>
                 <Row>
                     <Col>
-                    <CharacterCreate toke={props.toke}/>
+                    <CharacterCreate toke={props.sessionToken}/>
                     </Col>
                 </Row>
             </Container> */}
