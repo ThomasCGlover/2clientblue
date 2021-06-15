@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 const Register = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [email, updateEmail] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -42,6 +43,13 @@ const Register = (props) => {
             onChange={(e) => setPassword(e.target.value)} />
             <br/>
             <button type="submit" onClick={handleSubmit}>Submit</button>
+            <h2>Update User Email</h2>
+            <label htmlFor="email">Email to Update:</label>
+            <br />
+            <input type="text"
+            id='registeremail'
+            value={email}
+            onChange={(e) => updateEmail(e.target.value)} />
         </form>
     </div>
     )

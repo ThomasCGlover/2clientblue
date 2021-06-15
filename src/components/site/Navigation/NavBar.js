@@ -18,8 +18,7 @@ import FAQ from '../FAQ'
 import Splash from '../Splash'
 import { Route, Link, Switch } from 'react-router-dom';
 import { BrowserRouter as Router} from 'react-router-dom';
-
-
+import ReactDOM from 'react-dom';
 
 
 // const UseStyles = makeStyles((theme) => ({
@@ -116,8 +115,12 @@ const SiteBar = (props) => {
                         <Route exact path='/characterindex'><CharacterIndex /></Route>
                         <Route exact path='/charactercreate'><CharacterCreate /></Route>
                         <Route exact path='/FAQ'><FAQ /></Route>
+
+                        {/*<Route exact path='/splash'><Splash /></Route>*/}
+=======
                         <Route exact path='/splash'><Splash /></Route>
                         <Route exact path='/character/CharacterEdit'><CharacterEdit characterToUpdate={props.characterToUpdate} fetchCharacters={props.fetchCharacters} sessionToken={props.sessionToken}/></Route>
+
                     </Switch>
     
           </div>
