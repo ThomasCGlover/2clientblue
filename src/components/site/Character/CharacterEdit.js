@@ -1,7 +1,6 @@
-
 import React, {useState} from 'react';
 import {withStyles} from '@material-ui/core/styles'
-import { Button, TextField, Select, FormControl, InputLabel, Modal } from '@material-ui/core';
+import { Button, TextField, Select, FormControl, InputLabel, Modal, MenuItem } from '@material-ui/core';
 import {Form} from 'reactstrap';
 
 
@@ -53,8 +52,10 @@ const CharacterEdit = (props) =>{
                 <div>
                     <TextField id='outlined-basic' label='Name' variant='outlined' value={editCharName} onChange={(e) => setEditCharName(e.target.value)} />
                 </div>
-                {/* <div>
-                    <FormControl variant='outlined' className={classes.FormControl}>
+                <div>
+                    <FormControl variant='outlined' 
+                    //className={classes.FormControl}
+                    >
                     <InputLabel>Class</InputLabel>
                     <Select 
                     id='demo-simple-select-outlined' 
@@ -74,7 +75,9 @@ const CharacterEdit = (props) =>{
                         <MenuItem value='Wizard' >Wizard</MenuItem>
                     </Select>
                     </FormControl>
-                    <FormControl variant='outlined' className={classes.FormControl}>
+                    <FormControl variant='outlined'
+                    //className={classes.FormControl}
+                    >
                         <InputLabel>Race</InputLabel>
                         <Select id='demo-simple-select-outlined' value={editRace} onChange={(e) => setEditRace(e.target.value)}>
                             <MenuItem value='' ><em>None</em></MenuItem>
@@ -95,7 +98,9 @@ const CharacterEdit = (props) =>{
                     <TextField label='Strength' id='outlined-size-small' defaultValue='' variant='outlined' size='small' value={editStr} onChange={(e) => setEditStr(e.target.value)} />
                     <TextField label='Dexterity' id='outlined-size-small' defaultValue='' variant='outlined' size='small' value={editDex} onChange={(e) => setEditDex(e.target.value)} />
                     <TextField label='Constitution' id='outlined-size-small' defaultValue='' variant='outlined' size='small' value={editCon} onChange={(e) => setEditCon(e.target.value)} />
-                    {/*<TextField label='Intelligence' id='outlined-size-small' defaultValue='' variant='outlined' size='small' value={EditInt} onChange={(e) => setEditInt(e.target.value)} />*/}
+
+                    <TextField label='Intelligence' id='outlined-size-small' defaultValue='' variant='outlined' size='small' value={editInt} onChange={(e) => setEditInt(e.target.value)} />
+
                     <TextField label='Wisdom' id='outlined-size-small' defaultValue='' variant='outlined' size='small' value={editWis} onChange={(e) => setEditWis(e.target.value)} />
                     <TextField label='Charisma' id='outlined-size-small' defaultValue='' variant='outlined' size='small' value={editCha} onChange={(e) => setEditCha(e.target.value)} />
                 </div>
@@ -112,5 +117,3 @@ const CharacterEdit = (props) =>{
     )
 }
 export default withStyles() (CharacterEdit);
-
-
