@@ -1,8 +1,11 @@
-
 import React, { useState, useEffect } from "react";
 import CharacterCreate from "./CharacterCreate";
-import { makeStyles } from "@material-ui/core";
-import { Card, CardActions, CardContent, Button, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import {Card} from '@material-ui/core';
+import {CardActions} from '@material-ui/core';
+import {CardContent} from '@material-ui/core'; 
+import {Button} from '@material-ui/core';
+import {Typography} from '@material-ui/core'; 
 import CharacterTable from "./CharacterList";
 import { withStyles } from "@material-ui/styles";
 import CharacterEdit from "./CharacterEdit";
@@ -11,6 +14,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Form, Container, Row, Col } from 'reactstrap';
 
 const CharacterIndex = (props) => {
+
     const [character, setCharacters] = useState([]);
     const[createActive, setCreateActive] = useState(false);
     const[updateActive, setUpdateActive] = useState(false);
@@ -129,9 +133,28 @@ const CharacterIndex = (props) => {
     //     </>
     //         )},
     //   )}
-
 };
 
 
+export default withStyles() (CharacterIndex);
+  
+//   const characterMap = () => {
+//     return props.character.map((character, index) => {
+//   return (
+//     <>
 
-export default withStyles()(CharacterIndex);
+//         <tr key={index}>
+//           <td>{character.charName}</td>
+//           <td>{character.charClass}</td>
+//           <td>{character.race}</td>
+//           <td>{character.str}</td>
+//           <td>{character.dex}</td>
+//           <td>{character.con}</td>
+//           <td>{character.int}</td>
+//           <td>{character.wis}</td>
+//           <td>{character.cha}</td>
+//         </tr>;
+//     </>
+//         )},
+//   )}
+

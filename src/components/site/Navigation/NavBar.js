@@ -14,7 +14,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Logout from '../Logout/Logout';
 import CharacterIndex from '../Character/CharacterIndex';
 import CharacterCreate from '../Character/CharacterCreate';
-import FAQ from '../FAQ';
+import FAQ from '../FAQ'
+import Splash from '../Splash'
 import { Route, Link, Switch } from 'react-router-dom';
 import { BrowserRouter as Router} from 'react-router-dom';
 
@@ -69,14 +70,16 @@ const SiteBar = (props) => {
         //   className={classes.paper}
           >
             <MenuList>
-            <MenuItem>CharacterIndex</MenuItem>
-              <MenuItem>Character Create</MenuItem>
-              <MenuItem>FAQ</MenuItem>
-              <Logout />
+
+             <Link to='/characterindex'><MenuItem>Character Index</MenuItem></Link>
+              <Link to='/charactercreate'><MenuItem>Character Create</MenuItem></Link>
+              <Link to='/FAQ'><MenuItem>FAQ</MenuItem></Link>
+             <Link to='/'><Logout clearSession={props.clearSession}/></Link> 
     
             </MenuList>
           </Paper>
         </div>
+        
           <div>
             <Button
               ref={anchorRef}
@@ -98,7 +101,7 @@ const SiteBar = (props) => {
                         <MenuItem onClick={handleClose}>Character Index</MenuItem>
                         <MenuItem onClick={handleClose}>Character Create</MenuItem>
                         <MenuItem onClick={handleClose}>FAQ</MenuItem>
-                        <MenuItem onClick={handleClose}>Logout</MenuItem>
+                        <MenuItem onClick={props.clearSession}>Logout</MenuItem>
                       </MenuList>
                     </ClickAwayListener>
                   </Paper>
@@ -112,8 +115,8 @@ const SiteBar = (props) => {
                     <Switch>
                         <Route exact path='/characterindex'><CharacterIndex /></Route>
                         <Route exact path='/charactercreate'><CharacterCreate /></Route>
-                        <Route exact path='/faq'><FAQ /></Route>
-                        <Route exact path='/logout'><Logout /></Route>
+                        <Route exact path='/FAQ'><FAQ /></Route>
+                        <Route exact path='/splash'><Splash /></Route>
                     </Switch>
     
           </div>
@@ -122,4 +125,4 @@ const SiteBar = (props) => {
   );
 }
 
-export default withStyles()(SiteBar);
+// export default withStyles()(SiteBar);

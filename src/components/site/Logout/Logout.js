@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
@@ -16,26 +17,29 @@ const useStyles = makeStyles((theme) => ({
   function Logout(props) {
     //const logoutWoodenX = 
     const classes = useStyles();
-  
+
+
+
     return (
       <div>
-        <Button onClick={props.onClick}
+        <Button onClick={props.clearSession}
+        //set undefined ternary
           variant="contained"
           color="secondary"
-          //clearSession={props.onClick}
+          //setSessionToken(localStorage.setItem('token', undefined));
           //className={classes.button}
           // startIcon={DeleteIcon }
           //startIcon={logoutWoodenX}
         >
           Log Out
         </Button>
+
+
         
-        
-      </div>
-    );
-  }
+//       </div>
+//     );
+//   }
   
 
 
-//export default Logout;
-
+// //export default Logout;

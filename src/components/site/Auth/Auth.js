@@ -6,7 +6,7 @@ import Register from './Register';
 const Auth = (props) => {
 
     return(
-        <div>
+        <div className='auth'>
         <h1>Dungeons & Dragons Character Creator</h1>
         <Login updateToken={props.updateToken}/>
         <Register updateToken={props.updateToken}/>
