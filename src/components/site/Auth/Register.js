@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 const Register = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [email, updateEmail] = useState('');
+    const [newEmail, updateNewEmail] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -48,8 +48,8 @@ const Register = (props) => {
             <br />
             <input type="text"
             id='registeremail'
-            value={email}
-            onChange={(e) => updateEmail(e.target.value)} />
+            value={newEmail}
+            onChange={(e) => updateNewEmail(e.target.value)} />
         </form>
     </div>
     )
