@@ -17,18 +17,25 @@
 //     //const logoutWoodenX = 
 //     const classes = useStyles();
   
-//     return (
-//       <div>
-//         <Button onClick={props.onClick}
-//           variant="contained"
-//           color="secondary"
-//           //clearSession={props.onClick}
-//           //className={classes.button}
-//           startIcon={<DeleteIcon />}
-//           //startIcon={logoutWoodenX}
-//         >
-//           Log Out
-//         </Button>
+
+   
+
+
+
+    return (
+      <div>
+        <Button onClick={props.clearSession}
+        //set undefined ternary
+          variant="contained"
+          color="secondary"
+          //setSessionToken(localStorage.setItem('token', undefined));
+          //className={classes.button}
+          startIcon={<DeleteIcon />}
+          //startIcon={logoutWoodenX}
+        >
+          Log Out
+        </Button>
+
         
         
 //       </div>
