@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 // import CharacterCreate from './CharacterCreate';
 // import CharacterEdit from './CharacterEdit';
 // import { Button, 
@@ -6,42 +6,43 @@ import React, {useState} from 'react';
 //     Select, 
 //     FormControl, 
 //     InputLabel } from '@material-ui/core';
-import { Table, Button} from 'reactstrap';
+import { Table, Button } from 'reactstrap';
 
-const CharacterTable = (props) => { 
+const CharacterTable = (props) => {
     console.log(props.character);
-const characterMapper = () => { 
+    const characterMapper = () => {
 
-return props.character.map((characters, index) => {
+        return props.character.map((characters, index) => {
+            return (
+
+
+                <tr key={index}>
+                    <td>{characters.charName}</td>
+                    <td>{characters.charClass}</td>
+                    <td>{characters.race}</td>
+                    <td>{characters.STR}</td>
+                    <td>{characters.DEX}</td>
+                    <td>{characters.CON}</td>
+                    <td>{characters.INT}</td>
+                    <td>{characters.WIS}</td>
+                    <td>{characters.CHA}</td>
+                    <td>{characters.description}</td>
+                    <td>{characters.background}</td>
+                    <td>{characters.campaign}</td>
+                    <td>{characters.id}</td>
+                </tr>
+
+            )
+        },
+        )
+    }
     return (
-
-  
-          <tr key={index}>
-            <td>{characters.charName}</td>
-            <td>{characters.charClass}</td>
-            <td>{characters.race}</td>
-            <td>{characters.STR}</td>
-            <td>{characters.DEX}</td>
-            <td>{characters.CON}</td>
-            <td>{characters.INT}</td>
-            <td>{characters.WIS}</td>
-            <td>{characters.CHA}</td>
-            <td>{characters.description}</td>
-            <td>{characters.background}</td>
-            <td>{characters.campaign}</td>
-            <td>{characters.id}</td>
-          </tr>
-
-          )},
-    )
-} 
-    return(
         <>
-        <h3>Character Information</h3>
-        <Table>
-            <thead></thead>
-            <tbody>{characterMapper()}</tbody>
-        </Table>
+            <h3>Character Information</h3>
+            <Table>
+                <thead></thead>
+                <tbody>{characterMapper()}</tbody>
+            </Table>
         </>
     )
 }
