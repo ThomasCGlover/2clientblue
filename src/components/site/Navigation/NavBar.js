@@ -115,7 +115,12 @@ const SiteBar = (props) => {
                         <Route exact path='/characterindex'><CharacterIndex /></Route>
                         <Route exact path='/charactercreate'><CharacterCreate /></Route>
                         <Route exact path='/FAQ'><FAQ /></Route>
+
                         {/*<Route exact path='/splash'><Splash /></Route>*/}
+=======
+                        <Route exact path='/splash'><Splash /></Route>
+                        <Route exact path='/character/CharacterEdit'><CharacterEdit characterToUpdate={props.characterToUpdate} fetchCharacters={props.fetchCharacters} sessionToken={props.sessionToken}/></Route>
+
                     </Switch>
     
           </div>
@@ -124,4 +129,4 @@ const SiteBar = (props) => {
   );
 }
 
-// export default withStyles()(SiteBar);
+export default withStyles()(SiteBar);

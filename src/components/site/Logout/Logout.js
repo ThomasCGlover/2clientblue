@@ -20,15 +20,26 @@ export default function Logout(props) {
       <Button
         onClick={props.clearSession}
         //set undefined ternary
-        variant="contained"
-        color="secondary"
-        //setSessionToken(localStorage.setItem('token', undefined));
-        //className={classes.button}
-        // startIcon={DeleteIcon }
-        //startIcon={logoutWoodenX}
-      >
-        Log Out
-      </Button>
-    </div>
-  )
-}
+          variant="contained"
+          color="secondary"
+          //setSessionToken(localStorage.setItem('token', undefined));
+          //className={classes.button}
+          // startIcon={DeleteIcon }
+          //startIcon={logoutWoodenX}
+        >
+          Log Out
+        </Button>
+
+
+        
+
+       </div>
+
+
+
+    );
+  }
+  
+
+
+// export default Logout;

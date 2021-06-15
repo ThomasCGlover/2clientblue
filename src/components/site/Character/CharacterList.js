@@ -7,12 +7,13 @@ import CharacterEdit from './CharacterEdit';
 //     FormControl, 
 //     InputLabel } from '@material-ui/core';
 import { Table, Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 const CharacterTable = (props) => {
     console.log(props.character);
 
     if(props.character){
-        const list = props.character.map(characters => { 
+       return props.character.map((characters => { 
             return(
                 <div className="card" style={{width: 30 + 'rem' }}>
                 <div className="card-body">
@@ -29,48 +30,51 @@ const CharacterTable = (props) => {
               <li className="list-group-item">INT: {characters.INT}</li>
               <li className="list-group-item">WIS: {characters.WIS}</li>
               <li className="list-group-item">CHA: {characters.CHA}</li>
-                <Link to='/CharacterEdit'>
+                {/*<Link to='/CharacterEdit'>
                     <button type='button'>
                         Edit
                     </button>
-                </Link>
+                </Link>*}
               {/* <li className="list-group-item"><a href={t.url} target="_blank" rel="noopener noreferrer" className="card-link">Trail Information</a></li> */}
               </ul>
               </div>
           </div>
             )
-         })
+        }))
+
     }
-// const characterMapper = () => { 
-// return props.character.map((characters, index) => {
-//     return (
+    // const characterMapper = () => { 
+    // return props.character.map((characters, index) => {
+    //     return (
 
-  
-//           <tr key={index}>
-//             <td>{characters.charName}</td>
-//             <td>{characters.charClass}</td>
-//             <td>{characters.race}</td>
-//             <td>{characters.STR}</td>
-//             <td>{characters.DEX}</td>
-//             <td>{characters.CON}</td>
-//             <td>{characters.INT}</td>
-//             <td>{characters.WIS}</td>
-//             <td>{characters.CHA}</td>
-//             <td>{characters.description}</td>
-//             <td>{characters.background}</td>
-//             <td>{characters.campaign}</td>
-//             <td>{characters.id}</td>
-//           </tr>
 
-//           )},
-//     )
-// } 
-    return(
+    //           <tr key={index}>
+    //             <td>{characters.charName}</td>
+    //             <td>{characters.charClass}</td>
+    //             <td>{characters.race}</td>
+    //             <td>{characters.STR}</td>
+    //             <td>{characters.DEX}</td>
+    //             <td>{characters.CON}</td>
+    //             <td>{characters.INT}</td>
+    //             <td>{characters.WIS}</td>
+    //             <td>{characters.CHA}</td>
+    //             <td>{characters.description}</td>
+    //             <td>{characters.background}</td>
+    //             <td>{characters.campaign}</td>
+    //             <td>{characters.id}</td>
+    //           </tr>
+
+    //           )},
+    //     )
+    // } 
+    return (
         <>
+
         <h3>Character Information</h3>
         <div className='row'>
-            {list}
+            {CharacterTable()}
         </div>
+
         </>
     )
 }
