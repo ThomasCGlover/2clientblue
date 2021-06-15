@@ -12,14 +12,11 @@ import CharacterIndex from '../src/components/site/Character/CharacterIndex';
 //import ReactDOM from 'react-dom';
 //import Logout from './src/components/site/Logout/Logout';
 import Logout from './components/site/Logout/Logout.js';
-<<<<<<< HEAD
 import NavBar from './components/site/Navigation/NavBar';
 // import CharacterIndex from '../src/components/site/Character/CharacterIndex';
 import { BrowserRouter as Router } from 'react-router-dom';
-=======
-// import NavBar from './components/site/Navigation/NavBar';
 
->>>>>>> 2a1591f8202d52fb38d79de78af16642b7d23bfb
+
 
 function App() {
 
