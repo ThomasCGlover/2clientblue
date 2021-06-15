@@ -21,7 +21,7 @@ const CharacterTable = (props) => {
                 'Authorization': props.sessionToken 
             })
         })
-        .then(() =>props.fetchCharacter())
+        .then(() =>props.fetchCharacters())
     }
 
         const characterMapper = () => { 
