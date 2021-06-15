@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 // import CharacterCreate from './CharacterCreate';
 import CharacterEdit from './CharacterEdit';
 // import { Button, 
@@ -6,12 +6,13 @@ import CharacterEdit from './CharacterEdit';
 //     Select, 
 //     FormControl, 
 //     InputLabel } from '@material-ui/core';
-import { Table, Button} from 'reactstrap';
+import { Table, Button } from 'reactstrap';
 
-const CharacterTable = (props) => { 
+const CharacterTable = (props) => {
     console.log(props.character);
-    if(this.props.character.character){
-        const list = this.props.character.character.map(characters => { 
+
+    if(props.character){
+        const list = props.character.map(characters => { 
             return(
                 <div className="card" style={{width: 30 + 'rem' }}>
                 <div className="card-body">
