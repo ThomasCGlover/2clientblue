@@ -1,22 +1,23 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
-import DeleteIcon from '@material-ui/icons/Delete';
-import './Logout.css';
-import logoutWoodenX from '../../../assets/logoutWoodenX.png';
+// import React from 'react';
+// import Button from '@material-ui/core/Button';
+// import { makeStyles } from '@material-ui/core/styles';
+// // import DeleteIcon from '@material-ui/icons/Delete';
+// import './Logout.css';
+// import logoutWoodenX from '../../../assets/logoutWoodenX.png';
 
 
-const useStyles = makeStyles((theme) => ({
-    button: {
-      margin: theme.spacing(1),
-    },
-  }));
+// const useStyles = makeStyles((theme) => ({
+//     button: {
+//       margin: theme.spacing(1),
+//     },
+//   }));
   
-  export default
-   function Logout(props) {
-    //const logoutWoodenX = 
-    const classes = useStyles();
+//   export default
+//    function Logout(props) {
+//     //const logoutWoodenX = 
+//     const classes = useStyles();
   
+
    
 
 
@@ -34,13 +35,13 @@ const useStyles = makeStyles((theme) => ({
         >
           Log Out
         </Button>
+
         
         
-      </div>
-    );
-  }
+//       </div>
+//     );
+//   }
   
 
 
-//export default Logout;
-
+// //export default Logout;
