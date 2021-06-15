@@ -53,7 +53,7 @@ const CharacterEdit = (props) =>{
                 <div>
                     <TextField id='outlined-basic' label='Name' variant='outlined' value={editCharName} onChange={(e) => setEditCharName(e.target.value)} />
                 </div>
-                <div>
+                {/* <div>
                     <FormControl variant='outlined' className={classes.FormControl}>
                     <InputLabel>Class</InputLabel>
                     <Select 
@@ -90,12 +90,12 @@ const CharacterEdit = (props) =>{
 
                         </Select>
                     </FormControl>
-                </div>
+                </div> */}
                 <div>
                     <TextField label='Strength' id='outlined-size-small' defaultValue='' variant='outlined' size='small' value={editStr} onChange={(e) => setEditStr(e.target.value)} />
                     <TextField label='Dexterity' id='outlined-size-small' defaultValue='' variant='outlined' size='small' value={editDex} onChange={(e) => setEditDex(e.target.value)} />
                     <TextField label='Constitution' id='outlined-size-small' defaultValue='' variant='outlined' size='small' value={editCon} onChange={(e) => setEditCon(e.target.value)} />
-                    <TextField label='Intelligence' id='outlined-size-small' defaultValue='' variant='outlined' size='small' value={EditInt} onChange={(e) => setEditInt(e.target.value)} />
+                    {/*<TextField label='Intelligence' id='outlined-size-small' defaultValue='' variant='outlined' size='small' value={EditInt} onChange={(e) => setEditInt(e.target.value)} />*/}
                     <TextField label='Wisdom' id='outlined-size-small' defaultValue='' variant='outlined' size='small' value={editWis} onChange={(e) => setEditWis(e.target.value)} />
                     <TextField label='Charisma' id='outlined-size-small' defaultValue='' variant='outlined' size='small' value={editCha} onChange={(e) => setEditCha(e.target.value)} />
                 </div>
@@ -112,5 +112,3 @@ const CharacterEdit = (props) =>{
     )
 }
 export default withStyles() (CharacterEdit);
-
-
