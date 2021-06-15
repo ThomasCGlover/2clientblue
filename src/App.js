@@ -14,7 +14,7 @@ import NavBar from './components/site/Navigation/NavBar';
 
 function App() {
 
-  const [sessionToken, setSessionToken] = useState('')
+  const [sessionToken, setSessionToken] = useState(undefined)
 
   useEffect(() => {
     if(localStorage.getItem(!undefined)) {
