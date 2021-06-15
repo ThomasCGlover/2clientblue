@@ -70,6 +70,7 @@ const SiteBar = (props) => {
         //   className={classes.paper}
           >
             <MenuList>
+
              <Link to='/characterindex'><MenuItem>Character Index</MenuItem></Link>
               <Link to='/charactercreate'><MenuItem>Character Create</MenuItem></Link>
               <Link to='/FAQ'><MenuItem>FAQ</MenuItem></Link>
@@ -109,7 +110,7 @@ const SiteBar = (props) => {
             </Popper>
           </div>
     
-         <div className='navbar-route'>
+        <div className='navbar-route'>
     
                     <Switch>
                         <Route exact path='/characterindex'><CharacterIndex /></Route>
