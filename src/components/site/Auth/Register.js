@@ -1,10 +1,15 @@
 import React, {useState} from 'react';
 // import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
+
 import $ from 'jquery';
+
+import APIURL from '../../../helpers/environment'
+
 
 const Register = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
     const [updateEmail, setupdateEmail] = useState('');
 
     const handleSubmit = (event) => {
@@ -39,6 +44,13 @@ const Register = (props) => {
 
 
         fetch("http://localhost:3003/user/register", {
+
+    const [newEmail, updateNewEmail] = useState('');
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        fetch(`${APIURL}/user/register`, {
+
             method: 'POST',
             body: JSON.stringify({user: {email: email, password: password}}),
             headers: new Headers({
@@ -59,6 +71,8 @@ const Register = (props) => {
     return(
         <div>
         <form>
+            
+            <div className='registerEmail'>
             <h1>Register</h1>
             <label htmlFor="email">Email:</label>
             <br/>
@@ -75,6 +89,7 @@ const Register = (props) => {
             onChange={(e) => setPassword(e.target.value)} />
             <br/>
             <button type="submit" onClick={handleSubmit}>Submit</button>
+
             {/*<h2>Update User Email</h2>
             <label htmlFor="email">Email to Update:</label>
             <br />
@@ -83,6 +98,21 @@ const Register = (props) => {
             value={updateEmail}
             onChange={(e) => setupdateEmail(e.target.value)} /> */}
         </form>
+
+            </div>
+            
+            <div className='updateEmail'>
+            <h2>Update User Email</h2>
+            <label htmlFor="email">Update Email:</label>
+            <br />
+            <input type="text"
+            id='registeremail'
+            value={newEmail}
+            onChange={(e) => updateNewEmail(e.target.value)} />
+
+        </div>
+    </form>
+
     </div>
     )
 

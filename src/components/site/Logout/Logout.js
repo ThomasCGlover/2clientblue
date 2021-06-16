@@ -8,6 +8,7 @@ import logoutWoodenX from '../../../assets/logoutWoodenX.png'
 const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1),
+    color: 
   },
 }))
 
@@ -16,8 +17,8 @@ export default function Logout(props) {
   const classes = useStyles()
 
   return (
-    <div>
-      <Button
+    <div className='logout'>
+      <Button id='logout'
         onClick={props.clearSession}
         //set undefined ternary
           variant="contained"
