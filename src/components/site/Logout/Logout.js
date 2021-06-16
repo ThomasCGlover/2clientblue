@@ -3,13 +3,16 @@ import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core/styles'
 // import DeleteIcon from '@material-ui/icons/Delete';
 import './Logout.css'
-import logoutWoodenX from '../../../assets/logoutWoodenX.png'
+import logoutWoodenX from '../../../assets/logoutWoodenX.png';
+
+
 
 const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1),
   },
 }))
+
 
 export default function Logout(props) {
   //const logoutWoodenX =

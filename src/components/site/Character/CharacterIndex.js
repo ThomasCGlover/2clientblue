@@ -13,16 +13,50 @@ import { Link, Route, Switch } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Form, Container, Row, Col } from 'reactstrap';
 import NavBar from "../Navigation/NavBar";
+import APIURL from '../../../helpers/environment'
+import EmailUpdate from "../Auth/EmailUpdate";
+import EmailDisplay from './EmailDisplay';
+
 
 const CharacterIndex = ({sessionToken}) => {
 
     const [character, setCharacters] = useState([]);
     const[createActive, setCreateActive] = useState(false);
     const[updateActive, setUpdateActive] = useState(false);
-    const [characterToUpdate, setCharacterToUpdate] = useState({})
+    const [characterToUpdate, setCharacterToUpdate] = useState({});
+    const [emailToUpdate, setEmailToUpdate] =useState({});
+    const [email, setEmail] = useState([]);
+    const [updateEmailActive, setUpdateEmailActive] = useState(false);
+    // const [id, idToUpdate] = useState({})
 
+    const fetchEmail = async () =>{
+        fetch(`${APIURL}/user`, {
+            method:"GET",
+            // body: JSON.stringify({
+            //     email:{
+            //         id: idToUpdate,
+            //         email: emailToUpdate
+                
+            //     }
+            // }),
+            headers: new Headers({
+                "Content-Type": "application/json",
+                "Authorization": sessionToken,
+            }),
+        })
+        .then((res) => res.json())
+        .then((emailData) =>{
+            // setEmail(emailData)
+            console.log(emailData);
+        })
+    };
+    const editEmailInfo = (email) =>{
+        setEmailToUpdate(email);
+        console.log(email);
+
+    }
     const fetchCharacters = async () => {
-        await fetch("http://localhost:3003/character", {
+        await fetch(`${APIURL}/character`, {
             method: "GET",
             //   body: JSON.stringify({
             //       character: character
@@ -63,32 +97,48 @@ const CharacterIndex = ({sessionToken}) => {
     const updateOff =() =>{
         setUpdateActive(false)
     }
-
+    const updateEmailOn = () =>{
+        setUpdateEmailActive(true)
+    }
+    const updateEmailOff = () =>{
+        setUpdateEmailActive(false)
+    }
     useEffect(() => {
         fetchCharacters();
+        fetchEmail();
     }, []);
 
     const useStyles = makeStyles({
         root: {
-            minWidth: 275,
+          minWidth: 275,
         },
         bullet: {
-            display: "inline-block",
-            margin: "0 2px",
-            transform: "scale(0.8)",
+          display: 'inline-block',
+          margin: '0 2px',
+          transform: 'scale(0.8)',
         },
         title: {
-            fontSize: 14,
+          fontSize: 14,
         },
         pos: {
-            marginBottom: 12,
+          marginBottom: 12,
         },
-    });
+      });
 
-
+    
 
     return (
         <>
+            <Card>
+                <CardContent>
+                    <Typography>
+                        {<EmailDisplay email={email} fetchEmail={fetchEmail} editEmailInfo={editEmailInfo} updateEmailOn={updateEmailOn} sessionToken={sessionToken} />}
+                    </Typography>
+                </CardContent>
+                <CardActions>
+                    {updateEmailActive ? <EmailUpdate emailToUpdate={emailToUpdate} updateEmailOff={updateEmailOff} sessionToken={sessionToken} fetchEmail={fetchEmail}/> : <></>}
+                </CardActions>
+            </Card>
             <Card className>
                 <CardContent>
                     <Typography className variant='h5'>
@@ -119,6 +169,7 @@ const CharacterIndex = ({sessionToken}) => {
         </>
     )
 };
+
 
 
 export default withStyles() (CharacterIndex);
@@ -162,4 +213,3 @@ export default withStyles() (CharacterIndex);
 //     </>
 //         )},
 //   )}
-
