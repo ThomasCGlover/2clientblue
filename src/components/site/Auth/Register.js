@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import React, {useState} from 'react';
 // import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
+<<<<<<< HEAD
 
 import $ from 'jquery';
 
@@ -40,8 +41,49 @@ import APIURL from '../../../helpers/environment'
 
 
 
+=======
 
-        /*function validateEmail(email) {
+// import $ from 'jquery';
+
+import APIURL from '../../../helpers/environment'
+
+
+// const Register = (props) => {
+//     const [email, setEmail] = useState('');
+//     const [password, setPassword] = useState('');
+
+
+//     const [updateEmail, setupdateEmail] = useState('');
+
+//     const handleSubmit = (event) => {
+//         event.preventDefault();
+
+    // const [validEmail, setValidEmail] = useState(true);
+
+    // const ValidateEmail = (val) => {
+
+    //     if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(val)){
+        
+    //     setValidEmail(true)
+    //     } else{
+    //     setValidEmail(false)
+       
+    //     }
+        
+    // }
+>>>>>>> fab71f6221ebfba85e2244f09b27589bfce587ef
+
+
+    
+
+    
+    
+
+
+
+
+
+        function validateEmail(email) {
             const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(String(email).toLowerCase());
         }
@@ -64,6 +106,7 @@ import APIURL from '../../../helpers/environment'
             $result.css("color", "red");
           }
           return false;
+          
         }
         
         $("#validate").on("click", validate);*/
@@ -72,6 +115,13 @@ import APIURL from '../../../helpers/environment'
         event.preventDefault();
         fetch(`${APIURL}/user/register`, {
 
+<<<<<<< HEAD
+=======
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        fetch(`${APIURL}/user/register`, {
+
+>>>>>>> fab71f6221ebfba85e2244f09b27589bfce587ef
             method: 'POST',
             body: JSON.stringify({user: {email: email, password: password}}),
             headers: new Headers({
@@ -115,7 +165,10 @@ import APIURL from '../../../helpers/environment'
             <button type="submit" onClick={handleSubmit}>Submit</button>
 
         </form>
+<<<<<<< HEAD
 
+=======
+>>>>>>> fab71f6221ebfba85e2244f09b27589bfce587ef
     </form>
 
     </div>
