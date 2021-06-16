@@ -7,9 +7,15 @@ import $ from 'jquery';
 import APIURL from '../../../helpers/environment'
 
 
-const Register = (props) => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+// const Register = (props) => {
+//     const [email, setEmail] = useState('');
+//     const [password, setPassword] = useState('');
+
+
+//     const [updateEmail, setupdateEmail] = useState('');
+
+//     const handleSubmit = (event) => {
+//         event.preventDefault();
 
     // const [validEmail, setValidEmail] = useState(true);
 
@@ -30,6 +36,7 @@ const Register = (props) => {
 
     
     
+
 
 
 
@@ -85,6 +92,7 @@ const Register = (props) => {
     
 
     return(
+
         <div>
         <form>
             
@@ -112,6 +120,7 @@ const Register = (props) => {
 
     </div>
     )
+
 
 }
 

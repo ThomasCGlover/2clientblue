@@ -3,6 +3,11 @@ import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core/styles'
 // import DeleteIcon from '@material-ui/icons/Delete';
 import './Logout.css'
+
+
+
+
+
 // import logoutWoodenX from '../../../assets/logoutWoodenX.png'
 
 
@@ -18,6 +23,8 @@ import './Logout.css'
 //     color: 'white' 
 //   },
 // }))
+
+
 
 
 export default function Logout(props) {
