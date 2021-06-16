@@ -1,19 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
+import APIURL from '../../../helpers/environment';
 
 const EmailUpdate = (props) =>{
-    const [newEmail, setNewEmail]= useState(props.emailToUpdate.email)
+    const [newEmail, setNewEmail] = useState(props.emailToUpdate.email);
     const emailEdit = (event, email) =>{
         event.preventDefault();
-        fetch(`http://localhost:3003/update/${props.emailToUpdate.id}`,{
+        fetch(`${APIURL}/update/${props.emailToUpdate.id}`,{
             method: 'PUT',
-            body: JSON.stringify({ email:newEmail }),
+            body: JSON.stringify({ 
+                email:{
+                    email:newEmail
+                }}),
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': props.sessionToken
             })
         }).then ((res)=>{
             console.log(newEmail);
+            props.fetchEmail();
+            props.updateEmailOff();
         })
     } 
     return(
@@ -31,3 +37,4 @@ const EmailUpdate = (props) =>{
         </Modal>
     )
 }
+export default EmailUpdate;

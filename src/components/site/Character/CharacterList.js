@@ -69,6 +69,7 @@ const CharacterTable = (props) => {
                     <th>WIS</th>
                     <th>CHA</th>
                     <th>Description</th>
+                    <th>Background</th>
                     <th>Campaign</th>
                 </tr>
             </thead>

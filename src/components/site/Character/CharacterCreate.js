@@ -16,6 +16,7 @@ const CharacterCreate = (props) => {
     const [wis, setWis] = useState('');
     const [cha, setCha] = useState('');
     const [description, setDescription] = useState('');
+    const [background, setBackground] = useState('');
     const [campaign, setCampaign] = useState('');
 
     const handleSubmit = (e) => {
@@ -122,6 +123,21 @@ const CharacterCreate = (props) => {
                 </div>
                 <div>
                     <TextField label='Character Description' id='outlined-size-small' defaultValue='' variant='outlined' value={description} onChange={(e) => setDescription(e.target.value)} />
+                </div>
+                <div>
+                <InputLabel>Background</InputLabel>
+                        <Select
+                            id='demo-simple-select-outlined'
+                            value={background} onChange={(e) => setBackground(e.target.value)}>
+                            <MenuItem value=''> <em>None</em></MenuItem>
+                            <MenuItem value='Acolyte'>Acolyte</MenuItem>
+                            <MenuItem value='Criminal/Spy' >Criminal/Spy</MenuItem>
+                            <MenuItem value='Folk Hero' >Folk Hero</MenuItem>
+                            <MenuItem value='Haunted One' >Haunted One</MenuItem>
+                            <MenuItem value='Noble' >Noble</MenuItem>
+                            <MenuItem value='Sage' >Sage</MenuItem>
+                            <MenuItem value='Soldier' >Soldier</MenuItem>
+                        </Select>
                 </div>
                 <div>
                     <TextField label='Campaign' id='outlined-size-small' defaultValue='' variant='outlined' value={campaign} onChange={(e) => setCampaign(e.target.value)} />
