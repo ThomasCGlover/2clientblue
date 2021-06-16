@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Auth from './components/site/Auth/Auth.js';
-
+import './App.css';
 
 
 import CharacterIndex from '../src/components/site/Character/CharacterIndex';

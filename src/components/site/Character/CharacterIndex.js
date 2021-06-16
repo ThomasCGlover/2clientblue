@@ -13,16 +13,52 @@ import { Link, Route, Switch } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Form, Container, Row, Col } from 'reactstrap';
 import NavBar from "../Navigation/NavBar";
+import APIURL from '../../../helpers/environment'
+import EmailUpdate from "../Auth/EmailUpdate";
+import EmailDisplay from './EmailDisplay';
+
 
 const CharacterIndex = ({sessionToken}) => {
 
     const [character, setCharacters] = useState([]);
     const[createActive, setCreateActive] = useState(false);
     const[updateActive, setUpdateActive] = useState(false);
-    const [characterToUpdate, setCharacterToUpdate] = useState({})
+    const [characterToUpdate, setCharacterToUpdate] = useState({});
+    const [emailToUpdate, setEmailToUpdate] =useState({});
+    const [email, setEmail] = useState([]);
+    const [updateEmailActive, setUpdateEmailActive] = useState(false);
+    // const [id, idToUpdate] = useState({})
 
+    const fetchEmail = async () =>{
+        fetch(`${APIURL}/user`, {
+            method:"GET",
+            // body: JSON.stringify({
+            //     email:{
+            //         id: idToUpdate,
+            //         email: emailToUpdate
+                
+            //     }
+            // }),
+            headers: new Headers({
+                "Content-Type": "application/json",
+                "Authorization": sessionToken,
+            }),
+        })
+        .then((res) => res.json())
+        .then((emailData) =>{
+            setEmail(emailData.email)
+            console.log(emailData);
+        })
+    };
+    const editEmailInfo = (email) =>{
+        setEmailToUpdate(email);
+        console.log(email);
+        console.log(emailToUpdate);
+        console.log(updateEmailActive);
+
+    }
     const fetchCharacters = async () => {
-        await fetch("http://localhost:3003/character", {
+        await fetch(`${APIURL}/character`, {
             method: "GET",
             //   body: JSON.stringify({
             //       character: character
@@ -60,12 +96,18 @@ const CharacterIndex = ({sessionToken}) => {
     const updateOn = ()=>{
         setUpdateActive(true)
     }
+    const updateEmailOn = () =>{
+        setUpdateEmailActive(true)
+    }
     const updateOff =() =>{
         setUpdateActive(false)
     }
-
+    const updateEmailOff = () =>{
+        setUpdateEmailActive(false)
+    }
     useEffect(() => {
         fetchCharacters();
+        fetchEmail();
     }, []);
 
     const useStyles = makeStyles({
@@ -89,6 +131,16 @@ const CharacterIndex = ({sessionToken}) => {
 
     return (
         <>
+            <Card>
+                <CardContent>
+                    <Typography className variant='h4'>
+                        {<EmailDisplay email={email} fetchEmail={fetchEmail} editEmailInfo={editEmailInfo} updateEmailOn={updateEmailOn} sessionToken={sessionToken} />}
+                    </Typography>
+                </CardContent>
+                <CardActions>
+                    {updateEmailActive ? <EmailUpdate emailToUpdate={emailToUpdate} updateEmailOff={updateEmailOff} sessionToken={sessionToken} fetchEmail={fetchEmail}/> : <></>}
+                </CardActions>
+            </Card>
             <Card className>
                 <CardContent>
                     <Typography className variant='h5'>
@@ -103,22 +155,26 @@ const CharacterIndex = ({sessionToken}) => {
             {/* <Button onClick={displayCreate()}>Create New Character</Button> */}
             {/* <Container>
                 <Row>
-                    <Col>
-                    <CharacterCreate toke={props.sessionToken}/>
-                    </Col>
+                <Col>
+                <CharacterCreate toke={props.sessionToken}/>
+                </Col>
                 </Row>
             </Container> */}
             {/* <Form onSubmit={displayCreate}>
                 
-                    type='submit'
+                type='submit'
                 // onClick={createOn()} 
                 
-                    Create a new Character
+                Create a new Character
                 
             </Form> */}
         </>
     )
+};
 
+
+export default withStyles() (CharacterIndex);
+    
     //   const characterMap = () => {
     //     return props.character.map((character, index) => {
     //   return (
@@ -138,10 +194,6 @@ const CharacterIndex = ({sessionToken}) => {
     //     </>
     //         )},
     //   )}
-};
-
-
-export default withStyles() (CharacterIndex);
   
 //   const characterMap = () => {
 //     return props.character.map((character, index) => {

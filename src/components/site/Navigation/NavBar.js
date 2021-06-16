@@ -22,6 +22,11 @@ import { BrowserRouter as Router} from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import '../Navigation/NavBar.css';
 
+import App from '../../../App';
+
+import NavBarCSS from './NavBar.css';
+
+
 
 // const styles = {
 //   root: {
@@ -53,12 +58,8 @@ const SiteBar = (props) => {
     
 <Router>
     <>
+
         <div>
-  
-        
-          
-        
-    
              <Link to='/characterindex'><Box component="div" display="inline" p={1} m={1} bgcolor="background.paper">Character Index</Box></Link>
              <Link to='/charactercreate'><Box component="div" display="inline" p={1} m={1} bgcolor="background.paper">Character Create</Box></Link>
              <Link to='/FAQ'><Box component="div" display="inline" p={1} m={1} bgcolor="background.paper">FAQ</Box></Link>
@@ -78,9 +79,10 @@ const SiteBar = (props) => {
                         <Route exact path='/character/CharacterEdit'><CharacterEdit characterToUpdate={props.characterToUpdate} fetchCharacters={props.fetchCharacters} sessionToken={props.sessionToken}/></Route>
 
                     </Switch>
-    
-          </div>
-      </>
+
+        </div>
+        </>
+
 </Router>
   );
 }

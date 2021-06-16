@@ -5,20 +5,42 @@ import { makeStyles } from '@material-ui/core/styles'
 import './Logout.css'
 // import logoutWoodenX from '../../../assets/logoutWoodenX.png'
 
+
 // const useStyles = makeStyles((theme) => ({
 //   button: {
 //     margin: theme.spacing(1),
 //   },
 // }))
 
+// const useStyles = makeStyles((theme) => ({
+//   button: {
+//     margin: theme.spacing(1),
+//     color: 'white' 
+//   },
+// }))
+
+
 export default function Logout(props) {
   //const logoutWoodenX =
   // const classes = useStyles()
 
   return (
+
    
       
      <>
+
+//     <div className='logout'>
+//       <Button id='logout'
+//         onClick={props.clearSession}
+//         //set undefined ternary
+//           variant="contained"
+//           color="secondary"
+          //setSessionToken(localStorage.setItem('token', undefined));
+          //className={classes.button}
+          // startIcon={DeleteIcon }
+          //startIcon={logoutWoodenX}
+
           Log Out
        
     </>
