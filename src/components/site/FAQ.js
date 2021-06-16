@@ -5,7 +5,7 @@ const FAQ = (props) =>{
 return(<div>
 <h4>D &amp; D Character Creater</h4>
 <h2>FAQ</h2>
-    "Much read, very knowledge".
+ K   "Much read, very knowledge".
 
 <dl class="row">
   <dt class="col-sm-3">Purpose of this site:</dt>
