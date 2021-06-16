@@ -18,7 +18,8 @@ const EmailDisplay = (props) => {
     return (
         <div>
             <h3> Welcome {props.email.email}</h3>
-            <Button onClick={() => { props.editEmailInfo(); props.updateEmailOn() }}>Update Email</Button>
+            {/* <Button onClick={() => { props.editEmailInfo(props.email); props.updateEmailOn() }}>Update Email</Button> */}
+            <Button onClick={() => { props.editEmailInfo(props.email); props.updateEmailOn() }}>Update Email</Button>
         </div>
     )
 }

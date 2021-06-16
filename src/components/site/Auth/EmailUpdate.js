@@ -1,15 +1,16 @@
 import React, {useState} from 'react';
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import APIURL from '../../../helpers/environment';
+import { TextField } from '@material-ui/core';
 
 const EmailUpdate = (props) =>{
     const [newEmail, setNewEmail] = useState(props.emailToUpdate.email);
     const emailEdit = (event, email) =>{
         event.preventDefault();
-        fetch(`${APIURL}/update/${props.emailToUpdate.id}`,{
+        fetch(`${APIURL}/user/update/${props.emailToUpdate.id}`,{
             method: 'PUT',
             body: JSON.stringify({ 
-                email:{
+                user:{
                     email:newEmail
                 }}),
             headers: new Headers({
@@ -23,18 +24,19 @@ const EmailUpdate = (props) =>{
         })
     } 
     return(
-        <Modal>
-            <Form onSubmit={emailEdit}>
+        <>
+        <Modal isOpen={true}>
             <ModalHeader>Change your email!</ModalHeader>
             <ModalBody>
-                <FormGroup>
-                    <Label>New Email:</Label>
-                    <Input name='email' value={newEmail} onChange={(e) =>setNewEmail(e.target.value)} />
-                </FormGroup>
+                <Form onSubmit={emailEdit}>
+                    <div>
+                    <TextField id='outlined-basic' label='New Email' variant='outlined' value={newEmail} onChange={(e) =>setNewEmail(e.target.value)} />
+                    </div>
+                </Form>
             </ModalBody>
-            </Form>
-            <Button type='submit'>Submit Changes</Button>
+            <Button onClick={emailEdit}>Submit Changes</Button>
         </Modal>
+        </>
     )
 }
 export default EmailUpdate;
