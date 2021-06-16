@@ -4,12 +4,12 @@ import { Button, TextField, Select, FormControl, InputLabel, MenuItem } from '@m
 import { Form, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import APIURL from '../../../helpers/environment'
 import { makeStyles } from '@material-ui/core';
-const useStyles = makeStyles((theme) => ({
-    root: {
+const useStyles = makeStyles((theme)=>({
+    root:{
         '& .MuiTextField-root': {
             margin: theme.spacing(2),
-            width: '25ch',
-            padding: "10px",
+            width: '20ch',
+            // padding: "10px",
             align: 'center',
             flexGrow: 1,
             // display: "flex",
@@ -17,10 +17,24 @@ const useStyles = makeStyles((theme) => ({
             // float: "center",
         },
     },
-    formControl: {
-        margin: theme.spacing(2),
-        width: "20ch",
+    formControl:{
+        margin: theme.spacing(1),
+        width:"20ch",
         align: 'center',
+        textAlign: "center"
+    },
+    statControl:{
+        margin: theme.spacing(1),
+        width:"20ch",
+        align: 'center',
+        textAlign: "center"
+    },
+    divControl:{
+        // display: 'flex',
+        // justifyContent: 'space-between',
+        // alignItems:'center',
+        float:'center',
+        textAlign:'center'
     }
 }));
 const CharacterEdit = (props) => {
@@ -69,8 +83,10 @@ const CharacterEdit = (props) => {
     }
     return (
         <>
+            <div className={classes.divControl}>
             <h3>Edit your character</h3>
-            <Modal isOpen={true}>
+            <Form className={classes.root}>
+                <Modal isOpen={true}>
                 <ModalHeader>Update Character Information</ModalHeader>
                 <ModalBody>
                     <Form
@@ -162,7 +178,8 @@ const CharacterEdit = (props) => {
                     <Button onClick={characterEdit}>Update Character</Button>
                 </ModalBody>
             </Modal>
-
+            </Form>
+        </div>
         </>
     )
 }

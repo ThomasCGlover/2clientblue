@@ -119,7 +119,6 @@ const Register = (props) => {
                 'Content-Type': 'application/json'
             })
         })
-        .then
         .then(
             (response) => response.json()
         ).then((data) => {

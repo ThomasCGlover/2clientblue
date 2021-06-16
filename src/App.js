@@ -1,22 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import Auth from './components/site/Auth/Auth.js';
 import './App.css';
-
-
 import CharacterIndex from '../src/components/site/Character/CharacterIndex';
-
-
-
-
-
 //import ReactDOM from 'react-dom';
 //import Logout from './src/components/site/Logout/Logout';
 import Logout from './components/site/Logout/Logout.js';
 import NavBar from './components/site/Navigation/NavBar';
-
 // import CharacterIndex from '../src/components/site/Character/CharacterIndex';
 import { BrowserRouter as Router } from 'react-router-dom';
-
+import Footer from './components/site/Footer'
 
 
 function App() {
@@ -64,6 +56,7 @@ function App() {
       />
 
       {viewConductor()}
+    <Footer />
     </div>
     
   );

@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Yatra+One&display=swap');
+
 #logout{
     height: 50px;
 }
 
-.logout {
-    
+.logOut {
+    font-family: 'Yantra One', cursive;;
+    color: bisque;
 }
