@@ -5,24 +5,32 @@ import { Form } from 'reactstrap';
 import APIURL from '../../../helpers/environment'
 import { makeStyles } from '@material-ui/core';
 import { flexbox } from '@material-ui/system';
+import {Grid} from '@material-ui/core/Grid'
 
 const useStyles = makeStyles((theme)=>({
     root:{
         '& .MuiTextField-root': {
-            margin: theme.spacing(2),
-            width: '25ch',
+            margin: theme.spacing(1),
+            width: '20ch',
             padding: "10px",
-            align: 'center',
-            flexGrow: 1,
+            // align: 'center',
+            // flexGrow: 1,
             // display: "flex",
-            // justify-content: "center",
+            // justifyContent: "center",
+            // alignItems: 'center',s
             // float: "center",
         },
     },
     formControl:{
-        margin: theme.spacing(2),
+        margin: theme.spacing(1),
         width:"20ch",
         align: 'center',
+    },
+    divControl:{
+        display: 'flex',
+        // justifyContent: 'space-between',
+        alignItems:'center',
+        float:'center',
     }
 }));
 
@@ -86,7 +94,7 @@ export default function CharacterCreate (props) {
 
     return (
         <>
-        <div className="create">
+        <div className={classes.divControl}>
             <h3 id='createHeader'>Create a new Character</h3>
             <Form
                 //className={classes.root} 

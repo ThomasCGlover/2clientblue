@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 // import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
 
-import $ from 'jquery';
+// import $ from 'jquery';
 
 import APIURL from '../../../helpers/environment'
 
@@ -11,11 +11,12 @@ const Register = (props) => {
     const [password, setPassword] = useState('');
 
     const [updateEmail, setupdateEmail] = useState('');
-
+    
+    /*
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        /*function validateEmail(email) {
+        function validateEmail(email) {
             const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(String(email).toLowerCase());
         }
@@ -38,12 +39,12 @@ const Register = (props) => {
             $result.css("color", "red");
           }
           return false;
+          
         }
-        
-        $("#validate").on("click", validate);*/
+          $("#validate").on("click", validate);*/
+          
 
-
-        fetch("http://localhost:3003/user/register", {
+        //fetch("http://localhost:3003/user/register", {
 
     const [newEmail, updateNewEmail] = useState('');
 
@@ -97,11 +98,11 @@ const Register = (props) => {
             id='registeremail'
             value={updateEmail}
             onChange={(e) => setupdateEmail(e.target.value)} /> */}
-        </form>
+        {/* </form> */}
 
             </div>
             
-            <div className='updateEmail'>
+            {/* <div className='updateEmail'>
             <h2>Update User Email</h2>
             <label htmlFor="email">Update Email:</label>
             <br />
@@ -110,7 +111,7 @@ const Register = (props) => {
             value={newEmail}
             onChange={(e) => updateNewEmail(e.target.value)} />
 
-        </div>
+        </div> */}
     </form>
 
     </div>
