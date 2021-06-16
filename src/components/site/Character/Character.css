@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Yatra+One&display=swap');
+
 #listHeader {
     text-align: center;
+    font-family: 'Yantra One', cursive;
 }
 
 #createHeader {
@@ -8,4 +11,12 @@
 
 .characterGrid {
     align-items: center;
+}
+
+#tRow {
+    font-family: 'Yantra One', cursive;
+}
+
+.cIndex {
+    font-family: 'Yantra One', cursive;
 }

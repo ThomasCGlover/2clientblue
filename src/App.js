@@ -19,7 +19,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 
 
-
 function App() {
   
   const [sessionToken, setSessionToken] = useState(undefined)
@@ -32,11 +31,7 @@ function App() {
     };
   });
 
-  // useEffect(() => {
-  //   if(localStorage.getItem('token')){
-
-  //   }
-  // }, [])
+  
   
   const updateToken = (newToken) => {
     localStorage.setItem('token', newToken);

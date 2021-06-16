@@ -17,6 +17,12 @@ import APIURL from '../../../helpers/environment'
 import EmailUpdate from "../Auth/EmailUpdate";
 import EmailDisplay from './EmailDisplay';
 
+const theme = createMuiTheme({
+    typography: {
+      fontFamily: font,
+    },
+  });
+  
 
 const CharacterIndex = ({sessionToken}) => {
 
@@ -110,24 +116,8 @@ const CharacterIndex = ({sessionToken}) => {
         fetchEmail();
     }, []);
 
-    const useStyles = makeStyles({
-        root: {
-            minWidth: 275,
-        },
-        bullet: {
-            display: "inline-block",
-            margin: "0 2px",
-            transform: "scale(0.8)",
-        },
-        title: {
-            fontSize: 14,
-        },
-        pos: {
-            marginBottom: 12,
-        },
-    });
 
-
+    
 
     return (
         <>
@@ -173,6 +163,7 @@ const CharacterIndex = ({sessionToken}) => {
 };
 
 
+
 export default withStyles() (CharacterIndex);
     
     //   const characterMap = () => {
@@ -214,4 +205,3 @@ export default withStyles() (CharacterIndex);
 //     </>
 //         )},
 //   )}
-

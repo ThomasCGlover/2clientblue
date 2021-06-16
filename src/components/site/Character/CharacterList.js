@@ -10,7 +10,10 @@ import { Table, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import CharacterIndex from './CharacterIndex';
 import APIURL from '../../../helpers/environment'
-import CharacterCSS from './Character.css'
+import CharacterCSS from './Character.css';
+import { makeStyles } from '@material-ui/core';
+import { classExpression } from '@babel/types';
+
 
 
 
@@ -53,13 +56,22 @@ const CharacterTable = (props) => {
                   )},
             )
         } 
+
+        const useStyles = makeStyles({
+            root: {
+               
+            fontFamily: 'Yatra One',
+              
+            },
+          });
+
         return (
             <>
             <h3 id='listHeader'>Character Information</h3>
             <hr />
-        <Table striped>
+        <Table >
             <thead>
-                <tr>
+                <tr id='tRow'>
                     <th>Name</th>
                     <th>Class</th>
                     <th>Race</th>
