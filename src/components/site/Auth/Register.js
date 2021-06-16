@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import React, {useState} from 'react';
 // import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
 
-import $ from 'jquery';
+// import $ from 'jquery';
 
 import APIURL from '../../../helpers/environment'
 
@@ -41,7 +41,7 @@ import APIURL from '../../../helpers/environment'
 
 
 
-        /*function validateEmail(email) {
+        function validateEmail(email) {
             const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(String(email).toLowerCase());
         }
@@ -64,9 +64,11 @@ import APIURL from '../../../helpers/environment'
             $result.css("color", "red");
           }
           return false;
+          
         }
         
         $("#validate").on("click", validate);*/
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -115,7 +117,6 @@ import APIURL from '../../../helpers/environment'
             <button type="submit" onClick={handleSubmit}>Submit</button>
 
         </form>
-
     </form>
 
     </div>
