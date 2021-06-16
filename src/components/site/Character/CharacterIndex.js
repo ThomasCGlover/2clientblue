@@ -16,10 +16,20 @@ import NavBar from "../Navigation/NavBar";
 import APIURL from '../../../helpers/environment'
 import EmailUpdate from "../Auth/EmailUpdate";
 import EmailDisplay from './EmailDisplay';
+import { ThemeProvider } from "@material-ui/styles";
+import { fontFamily } from "@material-ui/system";
 
-const useStyles = makeStyles((theme) => {
-
-})
+const useStyles = makeStyles({
+    typography: {
+        fontFamily: 'Yantra One',
+        textTransform: 'capitalize'  
+    },
+    card: {
+        backgroundColor: '#FBE49D',
+        backgroundImage: `url("https://www.transparenttextures.com/patterns/natural-paper.png")`,
+    },
+    
+});
   
 
 const CharacterIndex = ({sessionToken}) => {
@@ -130,13 +140,13 @@ const CharacterIndex = ({sessionToken}) => {
                     {updateEmailActive ? <EmailUpdate emailToUpdate={emailToUpdate} updateEmailOff={updateEmailOff} sessionToken={sessionToken} fetchEmail={fetchEmail}/> : <></>}
                 </CardActions>
             </Card>
-            <Card className>
+            <Card className={classes.card}>
                 <CardContent>
-                    <ThemeProider theme={theme.typography.fontFamily}>
-                    <Typography variant='h5'>
+                    
+                    <Typography variant='h5' className={classes.typography}>
                         {<CharacterTable character={character} fetchCharacters={fetchCharacters} editCharacterInfo={editCharacterInfo} updateOn={updateOn} sessionToken={sessionToken}/>}
                     </Typography>
-                    </ThemeProider>
+                    
                 </CardContent>
                 <CardActions>
                     {updateActive ? <CharacterEdit characterToUpdate={characterToUpdate} updateOff={updateOff} sessionToken={sessionToken} fetchCharacters={fetchCharacters}/> : <></>}

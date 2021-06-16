@@ -48,22 +48,14 @@ const CharacterTable = (props) => {
                     <td>{characters.background}</td>
                     <td>{characters.campaign}</td>
                     <td>
-                        <Button onClick={() => {props.editCharacterInfo(characters); props.updateOn()}}>Update Character</Button>
-                        <Button onClick={() => deleteCharacters(characters)}>Delete Character</Button>
+                        <Button id='bttn' onClick={() => {props.editCharacterInfo(characters); props.updateOn()}}>Update Character</Button>
+                        <Button id='bttn' onClick={() => deleteCharacters(characters)}>Delete Character</Button>
                     </td>
                   </tr>
     
                   )},
             )
         } 
-
-        const useStyles = makeStyles({
-            root: {
-               
-            fontFamily: 'Yatra One',
-              
-            },
-          });
 
         return (
             <>
