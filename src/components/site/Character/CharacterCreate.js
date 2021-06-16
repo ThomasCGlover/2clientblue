@@ -5,11 +5,23 @@ import { Form } from 'reactstrap';
 import APIURL from '../../../helpers/environment'
 import { makeStyles } from '@material-ui/core';
 import { flexbox } from '@material-ui/system';
+<<<<<<< HEAD
+=======
 import {Grid} from '@material-ui/core/Grid'
+>>>>>>> fab71f6221ebfba85e2244f09b27589bfce587ef
 
 const useStyles = makeStyles((theme)=>({
     root:{
         '& .MuiTextField-root': {
+<<<<<<< HEAD
+            margin: theme.spacing(2),
+            width: '25ch',
+            padding: "10px",
+            align: 'center',
+            flexGrow: 1,
+            // display: "flex",
+            // justify-content: "center",
+=======
             margin: theme.spacing(1),
             width: '20ch',
             padding: "10px",
@@ -18,10 +30,16 @@ const useStyles = makeStyles((theme)=>({
             // display: "flex",
             // justifyContent: "center",
             // alignItems: 'center',s
+>>>>>>> fab71f6221ebfba85e2244f09b27589bfce587ef
             // float: "center",
         },
     },
     formControl:{
+<<<<<<< HEAD
+        margin: theme.spacing(2),
+        width:"20ch",
+        align: 'center',
+=======
         margin: theme.spacing(1),
         width:"20ch",
         align: 'center',
@@ -31,6 +49,7 @@ const useStyles = makeStyles((theme)=>({
         // justifyContent: 'space-between',
         alignItems:'center',
         float:'center',
+>>>>>>> fab71f6221ebfba85e2244f09b27589bfce587ef
     }
 }));
 
@@ -94,7 +113,11 @@ export default function CharacterCreate (props) {
 
     return (
         <>
+<<<<<<< HEAD
+        <div className="create">
+=======
         <div className={classes.divControl}>
+>>>>>>> fab71f6221ebfba85e2244f09b27589bfce587ef
             <h3 id='createHeader'>Create a new Character</h3>
             <Form
                 //className={classes.root} 
