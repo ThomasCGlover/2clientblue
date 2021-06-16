@@ -28,7 +28,7 @@ const useStyles = makeStyles({
         backgroundColor: '#FBE49D',
         backgroundImage: `url("https://www.transparenttextures.com/patterns/natural-paper.png")`,
     },
-    
+
 });
   
 
