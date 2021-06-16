@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Auth from './components/site/Auth/Auth.js';
-
+import './App.css';
 
 
 import CharacterIndex from '../src/components/site/Character/CharacterIndex';
@@ -19,7 +19,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 
 
-
 function App() {
   
   const [sessionToken, setSessionToken] = useState(undefined)
@@ -32,11 +31,7 @@ function App() {
     };
   });
 
-  // useEffect(() => {
-  //   if(localStorage.getItem('token')){
-
-  //   }
-  // }, [])
+  
   
   const updateToken = (newToken) => {
     localStorage.setItem('token', newToken);
