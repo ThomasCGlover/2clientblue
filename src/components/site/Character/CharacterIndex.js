@@ -17,11 +17,9 @@ import APIURL from '../../../helpers/environment'
 import EmailUpdate from "../Auth/EmailUpdate";
 import EmailDisplay from './EmailDisplay';
 
-const theme = createMuiTheme({
-    typography: {
-      fontFamily: font,
-    },
-  });
+const useStyles = makeStyles((theme) => {
+
+})
   
 
 const CharacterIndex = ({sessionToken}) => {
@@ -34,6 +32,7 @@ const CharacterIndex = ({sessionToken}) => {
     const [email, setEmail] = useState([]);
     const [updateEmailActive, setUpdateEmailActive] = useState(false);
     // const [id, idToUpdate] = useState({})
+    const classes = useStyles();
 
     const fetchEmail = async () =>{
         fetch(`${APIURL}/user`, {
@@ -133,9 +132,11 @@ const CharacterIndex = ({sessionToken}) => {
             </Card>
             <Card className>
                 <CardContent>
-                    <Typography className variant='h5'>
+                    <ThemeProider theme={theme.typography.fontFamily}>
+                    <Typography variant='h5'>
                         {<CharacterTable character={character} fetchCharacters={fetchCharacters} editCharacterInfo={editCharacterInfo} updateOn={updateOn} sessionToken={sessionToken}/>}
                     </Typography>
+                    </ThemeProider>
                 </CardContent>
                 <CardActions>
                     {updateActive ? <CharacterEdit characterToUpdate={characterToUpdate} updateOff={updateOff} sessionToken={sessionToken} fetchCharacters={fetchCharacters}/> : <></>}
