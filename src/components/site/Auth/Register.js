@@ -6,14 +6,14 @@ import $ from 'jquery';
 import APIURL from '../../../helpers/environment'
 
 
-const Register = (props) => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+// const Register = (props) => {
+//     const [email, setEmail] = useState('');
+//     const [password, setPassword] = useState('');
 
-    const [updateEmail, setupdateEmail] = useState('');
+//     const [updateEmail, setupdateEmail] = useState('');
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+//     const handleSubmit = (event) => {
+//         event.preventDefault();
 
         /*function validateEmail(email) {
             const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -69,6 +69,7 @@ const Register = (props) => {
     
 
     return(
+
         <div>
         <form>
             
@@ -115,6 +116,7 @@ const Register = (props) => {
 
     </div>
     )
+
 
 }
 

@@ -16,6 +16,7 @@ import { classExpression } from '@babel/types';
 
 
 
+
 const CharacterTable = (props) => {
     const deleteCharacters = (character) =>{
         fetch(`${APIURL}/character/delete/${character.id}`,{
@@ -68,9 +69,9 @@ const CharacterTable = (props) => {
             <>
             <h3 id='listHeader'>Character Information</h3>
             <hr />
-        <Table className={classes.root}>
+        <Table >
             <thead>
-                <tr>
+                <tr id='tRow'>
                     <th>Name</th>
                     <th>Class</th>
                     <th>Race</th>
