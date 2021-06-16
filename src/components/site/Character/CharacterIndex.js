@@ -103,22 +103,26 @@ const CharacterIndex = ({sessionToken}) => {
             {/* <Button onClick={displayCreate()}>Create New Character</Button> */}
             {/* <Container>
                 <Row>
-                    <Col>
-                    <CharacterCreate toke={props.sessionToken}/>
-                    </Col>
+                <Col>
+                <CharacterCreate toke={props.sessionToken}/>
+                </Col>
                 </Row>
             </Container> */}
             {/* <Form onSubmit={displayCreate}>
                 
-                    type='submit'
+                type='submit'
                 // onClick={createOn()} 
                 
-                    Create a new Character
+                Create a new Character
                 
             </Form> */}
         </>
     )
+};
 
+
+export default withStyles() (CharacterIndex);
+    
     //   const characterMap = () => {
     //     return props.character.map((character, index) => {
     //   return (
@@ -138,10 +142,6 @@ const CharacterIndex = ({sessionToken}) => {
     //     </>
     //         )},
     //   )}
-};
-
-
-export default withStyles() (CharacterIndex);
   
 //   const characterMap = () => {
 //     return props.character.map((character, index) => {
