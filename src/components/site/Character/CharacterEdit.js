@@ -3,8 +3,26 @@ import { withStyles } from '@material-ui/core/styles'
 import { Button, TextField, Select, FormControl, InputLabel, MenuItem } from '@material-ui/core';
 import { Form, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import APIURL from '../../../helpers/environment'
-
-
+import { makeStyles } from '@material-ui/core';
+const useStyles = makeStyles((theme) => ({
+    root: {
+        '& .MuiTextField-root': {
+            margin: theme.spacing(2),
+            width: '25ch',
+            padding: "10px",
+            align: 'center',
+            flexGrow: 1,
+            // display: "flex",
+            // justify-content: "center",
+            // float: "center",
+        },
+    },
+    formControl: {
+        margin: theme.spacing(2),
+        width: "20ch",
+        align: 'center',
+    }
+}));
 const CharacterEdit = (props) => {
     const [editCharName, setEditCharName] = useState(props.characterToUpdate.charName);
     const [editCharClass, setEditCharClass] = useState(props.characterToUpdate.charClass);
@@ -18,6 +36,7 @@ const CharacterEdit = (props) => {
     const [editDescription, setEditDescription] = useState(props.characterToUpdate.description);
     const [editBackground, setEditBackground] = useState(props.characterToUpdate.background)
     const [editCampaign, setEditCampaign] = useState(props.characterToUpdate.campaign);
+    const classes = useStyles();
 
     const characterEdit = (event, characters) => {
         event.preventDefault();
@@ -55,14 +74,14 @@ const CharacterEdit = (props) => {
                 <ModalHeader>Update Character Information</ModalHeader>
                 <ModalBody>
                     <Form
-                        //className={classes.root} autoComplete="off" 
+                        className={classes.root} autoComplete="off"
                         onSubmit={characterEdit}>
                         <div>
                             <TextField id='outlined-basic' label='Name' variant='outlined' value={editCharName} onChange={(e) => setEditCharName(e.target.value)} />
                         </div>
                         <div>
                             <FormControl variant='outlined'
-                            //className={classes.FormControl}
+                                className={classes.FormControl}
                             >
                                 <InputLabel>Class</InputLabel>
                                 <Select
@@ -84,7 +103,7 @@ const CharacterEdit = (props) => {
                                 </Select>
                             </FormControl>
                             <FormControl variant='outlined'
-                            //className={classes.FormControl}
+                                className={classes.FormControl}
                             >
                                 <InputLabel>Race</InputLabel>
                                 <Select id='demo-simple-select-outlined' value={editRace} onChange={(e) => setEditRace(e.target.value)}>
@@ -117,20 +136,25 @@ const CharacterEdit = (props) => {
                             <TextField label='Character Description' id='outlined-size-small' defaultValue='' variant='outlined' value={editDescription} onChange={(e) => setEditDescription(e.target.value)} />
                         </div>
                         <div>
-                <InputLabel>Background</InputLabel>
-                        <Select
-                            id='demo-simple-select-outlined'
-                            value={editBackground} onChange={(e) => setEditBackground(e.target.value)}>
-                            <MenuItem value=''> <em>None</em></MenuItem>
-                            <MenuItem value='Acolyte'>Acolyte</MenuItem>
-                            <MenuItem value='Criminal/Spy' >Criminal/Spy</MenuItem>
-                            <MenuItem value='Folk Hero' >Folk Hero</MenuItem>
-                            <MenuItem value='Haunted One' >Haunted One</MenuItem>
-                            <MenuItem value='Noble' >Noble</MenuItem>
-                            <MenuItem value='Sage' >Sage</MenuItem>
-                            <MenuItem value='Soldier' >Soldier</MenuItem>
-                        </Select>
-                </div>
+                            <FormControl variant='outlined'
+                                className={classes.formControl}
+                            //className={classes.FormControl}
+                            >
+                                <InputLabel>Background</InputLabel>
+                                <Select
+                                    id='demo-simple-select-outlined'
+                                    value={editBackground} onChange={(e) => setEditBackground(e.target.value)}>
+                                    <MenuItem value=''> <em>None</em></MenuItem>
+                                    <MenuItem value='Acolyte'>Acolyte</MenuItem>
+                                    <MenuItem value='Criminal/Spy' >Criminal/Spy</MenuItem>
+                                    <MenuItem value='Folk Hero' >Folk Hero</MenuItem>
+                                    <MenuItem value='Haunted One' >Haunted One</MenuItem>
+                                    <MenuItem value='Noble' >Noble</MenuItem>
+                                    <MenuItem value='Sage' >Sage</MenuItem>
+                                    <MenuItem value='Soldier' >Soldier</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </div>
                         <div>
                             <TextField label='Campaign' id='outlined-size-small' defaultValue='' variant='outlined' value={editCampaign} onChange={(e) => setEditCampaign(e.target.value)} />
                         </div>

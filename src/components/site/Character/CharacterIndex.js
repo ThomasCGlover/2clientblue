@@ -46,13 +46,15 @@ const CharacterIndex = ({sessionToken}) => {
         })
         .then((res) => res.json())
         .then((emailData) =>{
-            // setEmail(emailData)
+            setEmail(emailData.email)
             console.log(emailData);
         })
     };
     const editEmailInfo = (email) =>{
         setEmailToUpdate(email);
         console.log(email);
+        console.log(emailToUpdate);
+        console.log(updateEmailActive);
 
     }
     const fetchCharacters = async () => {
@@ -94,11 +96,11 @@ const CharacterIndex = ({sessionToken}) => {
     const updateOn = ()=>{
         setUpdateActive(true)
     }
-    const updateOff =() =>{
-        setUpdateActive(false)
-    }
     const updateEmailOn = () =>{
         setUpdateEmailActive(true)
+    }
+    const updateOff =() =>{
+        setUpdateActive(false)
     }
     const updateEmailOff = () =>{
         setUpdateEmailActive(false)
@@ -131,7 +133,7 @@ const CharacterIndex = ({sessionToken}) => {
         <>
             <Card>
                 <CardContent>
-                    <Typography>
+                    <Typography className variant='h4'>
                         {<EmailDisplay email={email} fetchEmail={fetchEmail} editEmailInfo={editEmailInfo} updateEmailOn={updateEmailOn} sessionToken={sessionToken} />}
                     </Typography>
                 </CardContent>
