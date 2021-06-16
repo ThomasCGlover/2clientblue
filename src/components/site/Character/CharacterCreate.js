@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme)=>({
     root:{
         '& .MuiTextField-root': {
             margin: theme.spacing(2),
-            width: '25ch',
+            width: '20ch',
             // padding: "10px",
             align: 'center',
             flexGrow: 1,
@@ -23,14 +23,22 @@ const useStyles = makeStyles((theme)=>({
     },
     formControl:{
         margin: theme.spacing(1),
-        width:"25ch",
+        width:"20ch",
         align: 'center',
+        textAlign: "center"
+    },
+    statControl:{
+        margin: theme.spacing(1),
+        width:"20ch",
+        align: 'center',
+        textAlign: "center"
     },
     divControl:{
         // display: 'flex',
         // justifyContent: 'space-between',
         // alignItems:'center',
         float:'center',
+        textAlign:'center'
     }
 }));
 

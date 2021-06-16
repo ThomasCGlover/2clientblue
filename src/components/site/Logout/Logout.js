@@ -3,8 +3,7 @@ import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core/styles'
 // import DeleteIcon from '@material-ui/icons/Delete';
 import './Logout.css'
-
-
+import {Typography} from '@material-ui/system';
 
 
 
@@ -43,12 +42,12 @@ export default function Logout(props) {
 //         //set undefined ternary
 //           variant="contained"
 //           color="secondary"
-          //setSessionToken(localStorage.setItem('token', undefined));
+          setSessionToken(localStorage.setItem('token', undefined));
           //className={classes.button}
           // startIcon={DeleteIcon }
           //startIcon={logoutWoodenX} */}
 
-          Log Out
+          <Button onClick={props.clearSession} className='logOut'>Log Out</Button>
        
     </>
 
