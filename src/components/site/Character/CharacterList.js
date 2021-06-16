@@ -9,6 +9,7 @@ import CharacterEdit from './CharacterEdit';
 import { Table, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import CharacterIndex from './CharacterIndex';
+import CharacterCSS from './Character.css'
 
 
 
@@ -53,13 +54,13 @@ const CharacterTable = (props) => {
         } 
         return (
             <>
-            <h3>Character Information</h3>
+            <h3 id='listHeader'>Character Information</h3>
             <hr />
         <Table striped>
             <thead>
                 <tr>
-                    <th>Name:</th>
-                    <th>Class:</th>
+                    <th>Name</th>
+                    <th>Class</th>
                     <th>Race</th>
                     <th>STR</th>
                     <th>DEX</th>

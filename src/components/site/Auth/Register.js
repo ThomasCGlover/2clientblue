@@ -27,6 +27,8 @@ const Register = (props) => {
     return(
         <div>
         <form>
+            
+            <div className='registerEmail'>
             <h1>Register</h1>
             <label htmlFor="email">Email:</label>
             <br/>
@@ -43,13 +45,19 @@ const Register = (props) => {
             onChange={(e) => setPassword(e.target.value)} />
             <br/>
             <button type="submit" onClick={handleSubmit}>Submit</button>
+            </div>
+            
+            <div className='updateEmail'>
             <h2>Update User Email</h2>
-            <label htmlFor="email">Email to Update:</label>
+            <label htmlFor="email">Update Email:</label>
             <br />
             <input type="text"
             id='registeremail'
             value={newEmail}
             onChange={(e) => updateNewEmail(e.target.value)} />
+        </div>
+
+
         </form>
     </div>
     )

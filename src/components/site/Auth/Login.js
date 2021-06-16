@@ -28,6 +28,7 @@ const Login = (props) => {
     return(
         <div>
         <form>
+            <div className='login'>
             <h1>Login</h1>
             <label htmlFor="email">Email:</label>
             <br/>
@@ -44,6 +45,7 @@ const Login = (props) => {
             onChange={(e) => setPassword(e.target.value)} />
             <br/>
             <button type="submit" onClick={handleSubmit}>Submit</button>
+        </div>
         </form>
     </div>
     )

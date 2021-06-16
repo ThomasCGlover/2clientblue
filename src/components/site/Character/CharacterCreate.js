@@ -61,15 +61,16 @@ const CharacterCreate = (props) => {
 
     return (
         <>
-            <h3>Create a new Character</h3>
+            <h3 id='createHeader'>Create a new Character</h3>
             <Form
                 //className={classes.root} 
                 // autoComplete="off"
                 onSubmit={handleSubmit}>
                 <div>
+                <div>
                     <TextField id='outlined-basic' label='Name' variant='outlined' value={charName} onChange={(e) => setCharName(e.target.value)} />
                 </div>
-                <div>
+                <div className='characterGrid'>
                     <FormControl variant='outlined'
                     //className={classes.FormControl}
                     >
@@ -124,6 +125,7 @@ const CharacterCreate = (props) => {
                 </div>
                 <div>
                     <TextField label='Campaign' id='outlined-size-small' defaultValue='' variant='outlined' value={campaign} onChange={(e) => setCampaign(e.target.value)} />
+                </div>
                 </div>
             </Form>
             <Button onClick={handleSubmit}>Click to create character</Button>
