@@ -1,3 +1,4 @@
+import { render } from '@testing-library/react';
 import React, {useState} from 'react';
 // import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
 
@@ -10,10 +11,35 @@ import APIURL from '../../../helpers/environment'
 //     const [email, setEmail] = useState('');
 //     const [password, setPassword] = useState('');
 
+
 //     const [updateEmail, setupdateEmail] = useState('');
 
 //     const handleSubmit = (event) => {
 //         event.preventDefault();
+
+    // const [validEmail, setValidEmail] = useState(true);
+
+    // const ValidateEmail = (val) => {
+
+    //     if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(val)){
+        
+    //     setValidEmail(true)
+    //     } else{
+    //     setValidEmail(false)
+       
+    //     }
+        
+    // }
+
+
+    
+
+    
+    
+
+
+
+
 
         /*function validateEmail(email) {
             const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -42,11 +68,6 @@ import APIURL from '../../../helpers/environment'
         
         $("#validate").on("click", validate);*/
 
-
-        fetch("http://localhost:3003/user/register", {
-
-    const [newEmail, updateNewEmail] = useState('');
-
     const handleSubmit = (event) => {
         event.preventDefault();
         fetch(`${APIURL}/user/register`, {
@@ -56,7 +77,9 @@ import APIURL from '../../../helpers/environment'
             headers: new Headers({
                 'Content-Type': 'application/json'
             })
-        }).then(
+        })
+        .then
+        .then(
             (response) => response.json()
         ).then((data) => {
             props.updateToken(data.sessionToken)
@@ -80,7 +103,7 @@ import APIURL from '../../../helpers/environment'
             <input type="text" 
             id='registeremail' 
             value={email} 
-            onChange={(e) => setEmail(e.target.value)} />
+            onChange={(e) => setEmail(e.target.value)}  />
             <br/>
             <label htmlFor="password">Password:</label>
             <br/>
@@ -91,27 +114,8 @@ import APIURL from '../../../helpers/environment'
             <br/>
             <button type="submit" onClick={handleSubmit}>Submit</button>
 
-            {/*<h2>Update User Email</h2>
-            <label htmlFor="email">Email to Update:</label>
-            <br />
-            <input type="text"
-            id='registeremail'
-            value={updateEmail}
-            onChange={(e) => setupdateEmail(e.target.value)} /> */}
         </form>
 
-            </div>
-            
-            <div className='updateEmail'>
-            <h2>Update User Email</h2>
-            <label htmlFor="email">Update Email:</label>
-            <br />
-            <input type="text"
-            id='registeremail'
-            value={newEmail}
-            onChange={(e) => updateNewEmail(e.target.value)} />
-
-        </div>
     </form>
 
     </div>
@@ -121,48 +125,3 @@ import APIURL from '../../../helpers/environment'
 }
 
 export default Register;
-// const Register = (props) => {
-//     const [email, setEmail] = useState('');
-//     const [password, setPassword] = useState('');
-
-//     const handleSubmit = (event) => {
-//         event.preventDefault();
-//         fetch("http://localhost:3003/user/register", {
-//             method: 'POST',
-//             body: JSON.stringify({user: {email: email, password: password}}),
-//             headers: new Headers({
-//                 'Content-Type': 'application/json'
-//             })
-//         }).then(
-//             (response) => response.json()
-//         ).then((data) => {
-//             props.updateToken(data.sessionToken)
-//         })
-//     }
-
-//     return(
-//         <div>
-//         <form>
-//             <h1>Register</h1>
-//             <label htmlFor="email">Email:</label>
-//             <br/>
-//             <input type="text" 
-//             id='registeremail' 
-//             value={email} 
-//             onChange={(e) => setEmail(e.target.value)} />
-//             <br/>
-//             <label htmlFor="password">Password:</label>
-//             <br/>
-//             <input type="password" 
-//             id='registerpassword' 
-//             value={password} 
-//             onChange={(e) => setPassword(e.target.value)} />
-//             <br/>
-//             <button type="submit" onClick={handleSubmit}>Submit</button>
-//         </form>
-//     </div>
-//     )
-
-// }
-
-// export default Register;
