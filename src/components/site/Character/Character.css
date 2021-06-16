@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Yatra+One&display=swap');
+
+#listHeader {
+    text-align: center;
+    font-family: 'Yantra One', cursive;
+}
+
+#createHeader {
+    text-align: center;
+}
+
+.characterGrid {
+    align-items: center;
+}
+
+#tRow {
+    font-family: 'Yantra One', cursive;
+}
+
+.cIndex {
+    font-family: 'Yantra One', cursive;
+}
+
+#bttn {
+    background-color: #8f7e4f;
+    color: black;
+}

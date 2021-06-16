@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
+import APIURL from '../../../helpers/environment'
 // import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
+
 
 const Login = (props) => {
     const [email, setEmail] = useState('');
@@ -7,7 +9,7 @@ const Login = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch("http://localhost:3003/user/login", {
+        fetch(`${APIURL}/user/login`, {
             method: 'POST',
             body: JSON.stringify({user: {email: email, password: password}}),
             headers: new Headers({
@@ -16,13 +18,18 @@ const Login = (props) => {
         }).then(
             (response) => response.json()
         ).then((data) => {
+            // console.log((data));
             props.updateToken(data.sessionToken)
         })
+        // .catch(
+        //     alert('Username or Password is incorrect')
+        // )
     }
 
     return(
         <div>
         <form>
+            <div className='login'>
             <h1>Login</h1>
             <label htmlFor="email">Email:</label>
             <br/>
@@ -39,6 +46,7 @@ const Login = (props) => {
             onChange={(e) => setPassword(e.target.value)} />
             <br/>
             <button type="submit" onClick={handleSubmit}>Submit</button>
+        </div>
         </form>
     </div>
     )
