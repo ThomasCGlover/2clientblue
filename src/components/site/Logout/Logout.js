@@ -37,16 +37,16 @@ export default function Logout(props) {
       
      <>
 
-//     <div className='logout'>
-//       <Button id='logout'
-//         onClick={props.clearSession}
+{/* //     <div className='logout'>
+//       <Button id='logout' */}
+{/* //         onClick={props.clearSession}
 //         //set undefined ternary
 //           variant="contained"
 //           color="secondary"
           //setSessionToken(localStorage.setItem('token', undefined));
           //className={classes.button}
           // startIcon={DeleteIcon }
-          //startIcon={logoutWoodenX}
+          //startIcon={logoutWoodenX} */}
 
           Log Out
        

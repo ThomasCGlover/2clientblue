@@ -17,11 +17,11 @@ import APIURL from '../../../helpers/environment'
 import EmailUpdate from "../Auth/EmailUpdate";
 import EmailDisplay from './EmailDisplay';
 
-const theme = createMuiTheme({
-    typography: {
-      fontFamily: font,
-    },
-  });
+// const theme = createMuiTheme({
+//     typography: {
+//       fontFamily: font,
+//     },
+//   });
   
 
 const CharacterIndex = ({sessionToken}) => {

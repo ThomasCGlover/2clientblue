@@ -1,4 +1,5 @@
-import Grid from '@material-ui.com/components/grid'
+import React from 'react'
+// import {Grid} from '@material-ui.com/components/'
 
 
 const FAQ = (props) =>{
